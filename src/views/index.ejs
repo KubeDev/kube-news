@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include('./partial/bootstrap-css'); %>
+        <title>KubeBlog</title>
+</head>
+<body class="m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+        <%- include('./partial/nav-bar'); %>
+        <!-- News  -->
+        <div>
+            <div>
+                <div class="row m-3" id="newsType">
+                    <h4></h4>
+                </div>
+                <div class="row me-2 ms-2" id="newsdetails">
+                    <% if (posts.length === 0) {%>
+                        <h3>Ainda não temos nenhum post, que tal você criar um ?</h3>
+                    <% } else { %>
+                        <% for(var i=0; i < posts.length; i++) { %>
+                            <div class="col-sm-12 col-md-4 col-lg-3 p-2 card">
+                                <div class="p-2">
+                                    <div>
+                                        <h5 class="card-title">
+                                            <%= posts[i].title %>
+                                        </h5>
+                                        <h6 class="text-primary">
+                                            <%= posts[i].publishDate %>
+                                        </h6>
+                                        <p class="text-muted">
+                                            <%= posts[i].summary %>
+                                        </p><a class="btn btn-dark" target="_blank"
+                                            href="/post/<%= posts[i].id %>">Saiba mais</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% } %>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./partial/bootstrap-js'); %>
+</body>
+
+</html>
