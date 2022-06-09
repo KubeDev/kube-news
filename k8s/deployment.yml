@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-news
+  namespace: default
+  labels:
+    app: kube-news
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-news
+  template:
+    metadata:
+      labels:
+        app: kube-news
+    spec:
+      containers:
+      - name: kube-news
+        image: lucas3337/kube-news:v1
+        env:
+          - name: DB_HOST
+            value: postgres
+          - name: DB_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: postgres
+                key: POSTGRES_DB
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: postgres
+                key: POSTGRES_USER
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres
+                key: POSTGRES_PASSWORD
+        ports:
+        - protocol: TCP
+          containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-news
+  namespace: default
+spec:
+  selector:
+    app: kube-news
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
