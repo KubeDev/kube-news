@@ -19,6 +19,9 @@ spec:
       containers:
       - name: postgres
         image: postgres:14
+        envFrom:
+          - secretRef:
+              name: postgres
         ports:
         - name: db
           protocol: TCP
