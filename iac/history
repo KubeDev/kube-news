@@ -1,0 +1,1000 @@
+ 1000  sudo poweroff 
+ 1001  npm start
+ 1002  cd rev-web/
+ 1003  ls
+ 1004  npx crate-react-app crud-v0
+ 1005  npx cerate-react-app crud-v0
+ 1006  npx create-react-app crud-v0
+ 1007  cd crud-v0/
+ 1008  npm install bootstrap --save
+ 1009  npm install react-router-dom --save
+ 1010  npm start
+ 1011  code .
+ 1012  tar -czf projetos.tar.gz WEB/
+ 1013  npm start
+ 1014  npm install
+ 1015  npm start
+ 1016  cd ..
+ 1017  git  clone https://github.com/jeffersoncarvalho/ufc_2022_1.git
+ 1018  ls
+ 1019  npm start
+ 1020  cd Cursos/
+ 1021  ls
+ 1022  cd Carrefour_Web_Developer/
+ 1023  ls
+ 1024  cd modulo-05-java/
+ 1025  ls
+ 1026  mkdir "Estruturas de Repetição e Arrays em Java"
+ 1027  cd Estruturas\ de\ Repetição\ e\ Arrays\ em\ Java/
+ 1028  cd ~/Tools/eclipse/
+ 1029  ./eclipse &
+ 1030  ls Tools/
+ 1031  ~/Tools/Postman/Postman 
+ 1032  ~/Tools/Postman/Postman &
+ 1033  htop
+ 1034  sudo swapoff /dev/sdb3 
+ 1035  sudo swapoff /dev/sda3 
+ 1036  cd .m2/repository/org/projectlombok/lombok/1.18.24/
+ 1037  ls
+ 1038  java -jar lombok-1.18.24.jar 
+ 1039  sudo htop
+ 1040  ~/Tools/sts-4.14.1.RELEASE/SpringToolSuite4 &
+ 1041  cd
+ 1042  cd Cursos/Imersao_springboot_algaworks/
+ 1043  ls
+ 1044  cd wp/algalog-api/
+ 1045  git sta
+ 1046  git status 
+ 1047  git add .
+ 1048  git commit -m "tasks: Starting to build Rest API, added only to customer listings."
+ 1049  git push 
+ 1050  sudo htop
+ 1051  cd Cursos/Carrefour_Web_Developer/
+ 1052  ls
+ 1053  cd modulo-04-react/
+ 1054  ls
+ 1055  rm intro/*
+ 1056  rm -r intro/*
+ 1057  code .
+ 1058  code . 
+ 1059  npm init
+ 1060  ls
+ 1061  mv package.json intro/
+ 1062  ls
+ 1063  cd intro/
+ 1064  ls
+ 1065  cat package.json 
+ 1066  npm install --save react react-dom react-scripts
+ 1067  code .
+ 1068  ls
+ 1069  rm -rf *.
+ 1070  ls 
+ 1071  rm -rf * 
+ 1072  ls
+ 1073  mkdir projeto_test
+ 1074  cd projeto_test/
+ 1075  ls
+ 1076  npm init
+ 1077  npm install --save react react-dom react-scripts
+ 1078  ls
+ 1079  code .
+ 1080  cd ..
+ 1081  rm -rf projeto_test/
+ 1082  ls
+ 1083  nmp create-react-app newapp
+ 1084  npm create-react-app newapp
+ 1085  npx create-react-app newapp
+ 1086  cd newapp/
+ 1087  ls
+ 1088  code .
+ 1089  sudo apt update && sudo apt upgrade
+ 1090  sudo apt autoremove 
+ 1091  npm install --save react-router-dom bootstrap
+ 1092  npm start
+ 1093  npm install
+ 1094  npm start
+ 1095  cd ~
+ 1096  git clone https://github.com/jeffersoncarvalho/ufc_2022_1.git
+ 1097  mkdir img
+ 1098  ls
+ 1099  cd img/
+ 1100  wget https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Doctor-Strange-logo.svg
+ 1101  wget 
+ 1102  wget https://upload.wikimedia.org/wikipedia/commons/c/c9/Doctor-Strange-logo.svg
+ 1103  wget https://www.imagensempng.com.br/wp-content/uploads/2021/08/04.png
+ 1104  npx create-react-app app01
+ 1105  cd app01/
+ 1106  npm start
+ 1107  sudo apt install python3
+ 1108  cd Cursos/
+ 1109  mkdir CBFCursos
+ 1110  cd CBFCursos/
+ 1111  mkdir React
+ 1112  cd React/
+ 1113  ls
+ 1114  code .
+ 1115  cd ..
+ 1116  mkdir "IMERSÃO DADOS - Alura"
+ 1117  ls
+ 1118  cd 'IMERSÃO DADOS - Alura'/
+ 1119  ls
+ 1120  nano README.md
+ 1121  git init
+ 1122  git add .
+ 1123  git commit -m "first commit"
+ 1124  git branch -M main
+ 1125  git remote add origin git@github.com:MoglesonLima/imersao-dados-alura.git
+ 1126  git push -u origin main
+ 1127  mkdir Aula_01
+ 1128  cd Aula_01/
+ 1129  nano ROTEIRO.md
+ 1130  wget https://gist.githubusercontent.com/tgcsantos/3bdb29eba6ce391e90df2b72205ba891/raw/22fa920e80c9fa209a9fccc8b52d74cc95d1599b/dados_imoveis.csv
+ 1131  ls
+ 1132  nano links
+ 1133  nano ROTEIRO.md 
+ 1134  code .
+ 1135  cd ..
+ 1136  git add 
+ 1137  git add .
+ 1138  git status
+ 1139  git commit -m "chore: Uploading database, CSV."
+ 1140  git push -u origin main
+ 1141  git add .
+ 1142  git status 
+ 1143  git commit -m "chore: Completing Class 01"
+ 1144  git push -u origin main
+ 1145  cd Cursos/CBFCursos/React/
+ 1146  ls
+ 1147  git init 
+ 1148  git add 
+ 1149  git add .
+ 1150  git rm --cached app01
+ 1151  git status 
+ 1152  ls
+ 1153  git status 
+ 1154  sudo nano .git/
+ 1155  nano .git/config 
+ 1156  cd ..
+ 1157  ls
+ 1158  sudo apt update && sudo apt upgrade
+ 1159  sudo poweroff 
+ 1160  npm start
+ 1161  cd Cursos/CBFCursos/
+ 1162  ls
+ 1163  cd React/
+ 1164  git init 
+ 1165  nano .git/config 
+ 1166  ls
+ 1167  git commit .
+ 1168  git add .
+ 1169  git status 
+ 1170  git commit -m "first commit"
+ 1171  git branch -M main
+ 1172  git remote add origin git@github.com:MoglesonLima/curso-react-CFBCursos.git
+ 1173  git push -u origin main
+ 1174  ls
+ 1175  cd app01/
+ 1176  ls
+ 1177  code .
+ 1178  cd..
+ 1179  cd ..
+ 1180  ls
+ 1181  git add .
+ 1182  git commit -m 'chore: Finishing introductory part'
+ 1183  git commit -m "chore: Finishing introductory part"
+ 1184  git status 
+ 1185  git add .
+ 1186  git status 
+ 1187  git add .
+ 1188  git add app01/
+ 1189  git status
+ 1190  git clean 
+ 1191  git clean -i
+ 1192  git status 
+ 1193  git add app01/src/.
+ 1194  git add app01/src/*
+ 1195  git add app01
+ 1196  git status 
+ 1197  git pull 
+ 1198  cd ..
+ 1199  ls
+ 1200  cd React/
+ 1201  git pull 
+ 1202  git status 
+ 1203  git add app01/
+ 1204  git status 
+ 1205  git app01 update
+ 1206  git update app01
+ 1207  git update-ref app01
+ 1208  git update-ref -m app01
+ 1209  git update-ref -m 
+ 1210  git update-ref -d
+ 1211  git update-ref --no-deref
+ 1212  git submodule update
+ 1213  git status 
+ 1214  git add .
+ 1215  git commit -m "update 01"
+ 1216  cp -r app01/ ~/
+ 1217  cd app01/
+ 1218  git reset HEAD --hard
+ 1219  ls
+ 1220  cd ..
+ 1221  git status 
+ 1222  cd ..
+ 1223  git add
+ 1224  git add .
+ 1225  cd React/
+ 1226  ls
+ 1227  git add .
+ 1228  git status 
+ 1229  git commit -a
+ 1230  git push 
+ 1231  rm app01/
+ 1232  rm -r app01/
+ 1233  rm -gr app01/
+ 1234  rm -rf app01/
+ 1235  ls
+ 1236  mv ~/app01/ .
+ 1237  ls
+ 1238  git add .
+ 1239  git status 
+ 1240  git commit -a
+ 1241  git push 
+ 1242  git config -f .gitmodules submodule.app01.ignore untracked
+ 1243  git add .
+ 1244  git commit -m "update"
+ 1245  npx create-react-app app02
+ 1246  cd app02
+ 1247  npm start
+ 1248  code .
+ 1249  /sbin/vboxconfig 
+ 1250  sudo /sbin/vboxconfig 
+ 1251  uname -a
+ 1252  sudo apt install linux-headers-5.17.0-2-amd64 
+ 1253  sudo /sbin/vboxconfig 
+ 1254  htop
+ 1255  ssh -i key-definitiva.pem ubuntu@52.91.22.211
+ 1256  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1257  ssh -i key-definitiva.pem ubuntu@52.91.22.211
+ 1258  ssh -i key-definitiva.pem ubuntu@107.23.112.94
+ 1259  ssh -i key-definitiva.pem ubuntu@44.205.112.184
+ 1260  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1261  ssh -i key-definitiva.pem ubuntu@44.205.112.184
+ 1262  ssh -i key-definitiva.pem ubuntu@54.234.86.157
+ 1263  ssh -i key-definitiva.pem ubuntu@44.205.112.184
+ 1264  ssh-keygen -f "/home/mogleson/.ssh/known_hosts" -R "44.205.112.184"
+ 1265  ssh -i key-definitiva.pem ubuntu@44.205.112.184
+ 1266  git clone https://github.com/MoglesonLima/my-access.git
+ 1267  git clone git@github.com:MoglesonLima/my-access.git
+ 1268  cd my-access/
+ 1269  ls
+ 1270  cp -r key-definitiva.pem ~/Área\ de\ trabalho/
+ 1271  cd ~/Área\ de\ trabalho/
+ 1272  ls
+ 1273  cd Gerência/
+ 1274  LS
+ 1275  ls
+ 1276  mkdir pratica-02
+ 1277  mv ~/Área\ de\ trabalho/key-definitiva.pem pratica-02/
+ 1278  cd pratica-02/
+ 1279  ls
+ 1280  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1281  ls
+ 1282  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1283  chmod 400 key-definitiva.pem 
+ 1284  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1285  0;105;12M0;105;12m
+ 1286  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1287  ssh -i key-definitiva.pem ubuntu@107.23.112.94
+ 1288  python
+ 1289  python3
+ 1290  cd Área\ de\ trabalho/Gerência/
+ 1291  ls
+ 1292  cd pratica-02/
+ 1293  ls
+ 1294  history 
+ 1295  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1296  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1297  ls
+ 1298  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1299  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1300  ls
+ 1301  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1302  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1303  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1304  ssh -i key-definitiva.pem ubuntu@3.223.205.253]
+ 1305  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1306  sudo ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1307  ssh -i key-definitiva.pem ubuntu@107.23.112.94
+ 1308  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1309  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1310  sudo ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1311  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1312  ssh -i key-definitiva.pem ubuntu@3.223.205.253
+ 1313  cd Área\ de\ trabalho/Gerência/pratica-02/
+ 1314  ls
+ 1315  ssh -i key-definitiva.pem ubuntu@44.205.112.184
+ 1316  git clone https://github.com/mayaraalmeid/Web_2022_1.git
+ 1317  cd Web_2022_1/
+ 1318  ls
+ 1319  mkdir ~/hello
+ 1320  vm Atividade03_e_05/ ~/hello/Atividade_05
+ 1321  cp -r Atividade03_e_05/ ~/hello/Atividade_05
+ 1322  cd ~/hello/Atividade_05/
+ 1323  ls
+ 1324  code .
+ 1325  sudo /etc/init.d/alsa-utils restart
+ 1326  sudo reboot
+ 1327  git clone git@github.com:MoglesonLima/WEB_2020-1.git
+ 1328  mkdir mayara
+ 1329  cd mayara/
+ 1330  github clone https://github.com/mayaraalmeid/Web_2022_1.git
+ 1331  git clone https://github.com/mayaraalmeid/Web_2022_1.git
+ 1332  ls[
+ 1333  ls
+ 1334  mkdir wd
+ 1335  cd wd/
+ 1336  npx create-react-app new-01
+ 1337  cd new-01/
+ 1338  npm install --save bootstrap react-router-dom
+ 1339  npm start 
+ 1340  code .
+ 1341  npm start &
+ 1342  jobs 
+ 1343  fg  
+ 1344  cd ..
+ 1345  rm new-01/
+ 1346  rm -r new-01/
+ 1347  rm -rfg new-01/
+ 1348  rm -rf new-01/
+ 1349  npx create-react-app new-01 
+ 1350  cd new-01/
+ 1351  npm install --save bootstrap react-router-dom
+ 1352  code .
+ 1353  cd .config/sublime-text/Packages/User/
+ 1354  ls
+ 1355  git clone https://github.com/dracula/sublime.git "Dracula Color Scheme"
+ 1356  ls
+ 1357  cd Dracula\ Color\ Scheme/
+ 1358  ls
+ 1359  cat INSTALL.md 
+ 1360  cd .
+ 1361  ~
+ 1362  cd
+ 1363  sudo apt autoremove 
+ 1364  sudo apt purge linux-image-5.10.0-13-amd64 linux-headers-5.16.0-6-*
+ 1365  sudo rm -rf /lib/modules/5.16.0-6-amd64
+ 1366  sudo apt purge linux-image-5.17.0-1-amd64 linux-image-5.17.0-2-amd64 
+ 1367  sudo apt autoremove 
+ 1368  sudo apt update
+ 1369  sudo apt upgrade
+ 1370  sudo 
+ 1371  sudo su
+ 1372  rm -rf he*o/
+ 1373  ls
+ 1374  mkdir web-rev
+ 1375  cd web-rev/
+ 1376  npx create-react-app crud
+ 1377  cd crud/
+ 1378  ls
+ 1379  code .
+ 1380  npm install --save bootstrap 
+ 1381  npm install --save bootstrap react-router-don
+ 1382  npm install --save bootstrap react-router-dom
+ 1383  npm -i --save bootstrap react-router-don
+ 1384  npm -install --save bootstrap react-router-don
+ 1385  npm -install --save react-router-don
+ 1386  npm -install --save react-router-dom
+ 1387  npm start 
+ 1388  sudo apt purge node*
+ 1389  npm start 
+ 1390  sudo apt-get remove nodejs --purge
+ 1391  npm install react-router-dom --save
+ 1392  npm install bootstrap --save
+ 1393  npm start
+ 1394  sudo htop
+ 1395  sudo swapoff /dev/sda3 
+ 1396  cd Cursos/CBFCursos/
+ 1397  ls
+ 1398  cd React/
+ 1399  ls
+ 1400  code app02/
+ 1401  sudo apt purge node 
+ 1402  apt-get remove npm --purge
+ 1403  sudo apt-get remove npm --purge
+ 1404  which node
+ 1405  sudo rm /home/mogleson/.nvm/versions/node/v16.15.0/bin/node
+ 1406  which node
+ 1407  node --v
+ 1408  npm 
+ 1409  npm --v
+ 1410  sudo apt install node js
+ 1411  nvm ls-remote
+ 1412  nvm uninstall v16.15.0 
+ 1413  nvm install v16.14.2
+ 1414  node  -v
+ 1415  ls
+ 1416  cd ..
+ 1417  ls
+ 1418  cd ..
+ 1419  xls
+ 1420  ls
+ 1421  rm rev-web/
+ 1422  rm -rf rev-web/
+ 1423  ls
+ 1424  rm -rf web-rev/
+ 1425  rm -rf wp
+ 1426  rm -rf wd
+ 1427  mkdir web
+ 1428  cd web/
+ 1429  npx create-reac-app projeto-CRUD_v1
+ 1430  npx create-react-app projeto-CRUD_v1
+ 1431  npx create-react-app projeto_CRUD_v1
+ 1432  npx create-react-app projetoCRUD_v1
+ 1433  npx create-react-app CRUDv1
+ 1434  npx create-react-app crud
+ 1435  npx create-react-app crud-v1
+ 1436  cd crud-v1/
+ 1437  code .
+ 1438  cd ..
+ 1439  npx create-react-app rotas
+ 1440  cd rotas/
+ 1441  code .
+ 1442  npm install react-router-dom
+ 1443  ls
+ 1444  cd ..
+ 1445  rm -rf crud*
+ 1446  ls
+ 1447  rm -rf rotas/
+ 1448  npx create-react-app crud-v1
+ 1449  cd crud-v1/
+ 1450  ls
+ 1451  npm install react-router-dom bootstrap --save
+ 1452  git clone https://github.com/jeffersoncarvalho/ufc_2022_1.git
+ 1453  code ufc_2022_1/
+ 1454  ls
+ 1455  cd WEB-2022/
+ 1456  mkdir IMPLEMENTACAO
+ 1457  code IMPLEMENTACAO/
+ 1458  npx create-react-app crud_json
+ 1459  npm create-react-app crud_json
+ 1460  npx -v
+ 1461  npm -v
+ 1462  nvm use v16.14.2 
+ 1463  npx -v
+ 1464  npm create-react-app crud_json
+ 1465  npx create-react-app crud_json
+ 1466  cd crud_json/
+ 1467  npm install --save react-router-dom
+ 1468  npm install --save axios
+ 1469  ls
+ 1470  cd Área\ de\ trabalho/
+ 1471  ls
+ 1472  rm -rf ufc_2022_1/
+ 1473  rm -rf WEB_2022_1/
+ 1474  ls
+ 1475  sudo apt update 
+ 1476  ls
+ 1477  thunar
+ 1478  sudo nano ~/.bashrc 
+ 1479  npx -v
+ 1480  nvm use v16.14.2 
+ 1481  cd app02/
+ 1482  ls
+ 1483  npm start 
+ 1484  cd ..
+ 1485  ls
+ 1486  npx create-react-app app02
+ 1487  cd app02/
+ 1488  npm start
+ 1489  cd Cursos/CBFCursos/
+ 1490  ls
+ 1491  code React/
+ 1492  sudo apt install mesa-utils
+ 1493  sudo reboot
+ 1494  sudo systemctl disable postgresql.service
+ 1495  sudo htop
+ 1496  sudo apt update
+ 1497  sudo apt upgrade
+ 1498  sudo htop
+ 1499  cd Área\ de\ trabalho/Zerando-WEB/A05/
+ 1500  ls
+ 1501  npx create-react-app atividade_05
+ 1502  nvm use v16.14.2 
+ 1503  npx create-react-app atividade_05
+ 1504  cd atividade_05/
+ 1505  ls
+ 1506  code .
+ 1507  cd ..
+ 1508  git clone 
+ 1509  git clone https://github.com/jeffersoncarvalho/ufc_2022_1~
+ 1510  git clone https://github.com/jeffersoncarvalho/ufc_2022_1.git
+ 1511  code ufc_2022_1/
+ 1512  nvm --version
+ 1513  node --v
+ 1514  np
+ 1515  npm start
+ 1516  nvm use v16.14.2 
+ 1517  npm start
+ 1518  sudo rm -rf ~/.nvm
+ 1519  sudo nano .bashrc 
+ 1520  nano .bash_profile
+ 1521  nano .profile 
+ 1522  rm -rf ~/.nvm
+ 1523  rm -rf ~/.npm
+ 1524  rm -rf ~/.bower
+ 1525  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+ 1526  nano .profile 
+ 1527  nano .bashrc 
+ 1528  source .bashrc 
+ 1529  ls
+ 1530  ls -a
+ 1531  nvm ls
+ 1532  nvm -v
+ 1533  nvm --v
+ 1534  nvm --version
+ 1535  nvm install v16.14.2
+ 1536  source .bashrc 
+ 1537  node -v
+ 1538  npx -v
+ 1539  npm -v
+ 1540  nano .bashrc 
+ 1541  source .bashrc 
+ 1542  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+ 1543  source .bashrc 
+ 1544  sudo wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+ 1545  . ~/.nvm/nvm.sh
+ 1546  source .bashrc 
+ 1547  command -v nvm
+ 1548  cd .nvm/
+ 1549  ls
+ 1550  ls nvm.sh 
+ 1551  ls
+ 1552  sudo nano cd ..]
+ 1553  cd 
+ 1554  nano .bashrc 
+ 1555  source .bashrc 
+ 1556  git clone https://github.com/mayaraalmeid/Web_2022_1.git
+ 1557  cd Cursos/
+ 1558  git clone https://github.com/mayaraalmeid/Web_2022_1.git
+ 1559  code Web_2022_1/
+ 1560  sudo htop
+ 1561  npm install axios
+ 1562  npm install axios --save
+ 1563  json-server --watch ./data/db.json --port 3006
+ 1564  npm -v
+ 1565  sudo npm instal -g json-server
+ 1566  npm instal -g json-server
+ 1567  json-server --watch ./data/db.json --port 3006
+ 1568  npm start
+ 1569  cd Área\ de\ trabalho/Zerando-WEB/
+ 1570  ls
+ 1571  git init
+ 1572  echo "# practicing-web" > README.md
+ 1573  git add .
+ 1574  git commit -m "first commit"
+ 1575  git branch -M main
+ 1576  git remote add origin https://github.com/MoglesonLima/practicing-web.git
+ 1577  git push -u origin main
+ 1578  nano .git/config 
+ 1579  git push -u origin main
+ 1580  cd Área\ de\ trabalho/
+ 1581  cd Gerência/pratica-02/
+ 1582  ls
+ 1583  ssh -i  key-definitiva.pem ubuntu@3.216.66.67
+ 1584  sudo poweroff 
+ 1585  sudo apt update
+ 1586  sudo apt upgrade
+ 1587  code Área\ de\ trabalho/Gerência/install-zabbix.sh 
+ 1588  #/bin/bash
+ 1589  wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu20.04_all.deb
+ 1590  dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb
+ 1591  apt update
+ 1592  mysql
+ 1593  create database zabbix character set utf8mb4 collate utf8mb4_bin;
+ 1594  create user zabbix@localhost identified by 'Mogly@123';
+ 1595  grant all privileges on zabbix.* to zabbix@localhost;
+ 1596  quit;
+ 1597  zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+ 1598  cd Área\ de\ trabalho/
+ 1599  ls
+ 1600  cd Gerência/
+ 1601  ls
+ 1602  cd pratica-02/
+ 1603  ls
+ 1604  ssh -i  key-definitiva.pem ubuntu@3.216.66.67
+ 1605  history 
+ 1606  sudo htop
+ 1607  code Cursos/CBFCursos/React/
+ 1608  cd app02/
+ 1609  ls
+ 1610  npm start
+ 1611  cd ..
+ 1612  npx create-react-app app03
+ 1613  cd app03/
+ 1614  npm start
+ 1615  cd ..
+ 1616  git add .
+ 1617  git status 
+ 1618  git add .
+ 1619  git commit -m "add aula 11"
+ 1620  git push 
+ 1621  cd Cursos/
+ 1622  cd CBFCursos/
+ 1623  ls
+ 1624  cd React/
+ 1625  ls
+ 1626  git push 
+ 1627  git pull 
+ 1628  git status 
+ 1629  git pull -f 
+ 1630  code .
+ 1631  ls
+ 1632  rm -rf *
+ 1633  ls
+ 1634  ls -a
+ 1635  git init
+ 1636  cd ..
+ 1637  ls
+ 1638  mkdir React
+ 1639  cd React/
+ 1640  git init 
+ 1641  git remote add origin git@github.com:MoglesonLima/curso-react-CFBCursos.git
+ 1642  git push -u origin main
+ 1643  git add
+ 1644  git add .
+ 1645  git commit -ma "update"
+ 1646  git commit -a "update"
+ 1647  git commit -m "update"
+ 1648  git add .
+ 1649  git status 
+ 1650  cd ..
+ 1651  ls
+ 1652  cd CBFCursos/
+ 1653  ls
+ 1654  rm -rf React/
+ 1655  cd Cursos/Carrefour_Web_Developer/modulo-0
+ 1656  cd Cursos/Carrefour_Web_Developer/modulo-04-react/
+ 1657  code .
+ 1658  lds
+ 1659  ls
+ 1660  cd intro/
+ 1661  ls
+ 1662  ping 8.8.8.8
+ 1663  cd ..
+ 1664  la
+ 1665  ls
+ 1666  cd ~
+ 1667  cd Cursos/CBFCursos/
+ 1668  ls
+ 1669  rm -rf React/
+ 1670  ls
+ 1671  ls -a
+ 1672  git clone git@github.com:MoglesonLima/React-CFBCursos.git
+ 1673  ls
+ 1674  code React-CFBCursos/
+ 1675  sudo 78629654
+ 1676  sudo 
+ 1677  sudo su
+ 1678  sudo swapoff /dev/sda3 
+ 1679  ls
+ 1680  mkdir Test-git
+ 1681  cd Test-git/
+ 1682  ls
+ 1683  nano test.py
+ 1684  ls
+ 1685  git init
+ 1686  ls -a
+ 1687  çls
+ 1688  ls
+ 1689  cat config 
+ 1690  git status 
+ 1691  cd ..
+ 1692  git status 
+ 1693  echo "# test" > README.md
+ 1694  git status 
+ 1695  git add .
+ 1696  git status 
+ 1697  git commit -m 'first commit'
+ 1698  git branch -M main
+ 1699  cat .git/config 
+ 1700  git remote add origin https://github.com/MoglesonLima/test.git
+ 1701  cat .git/config 
+ 1702  git status 
+ 1703  git push -u origin main
+ 1704  cd ..
+ 1705  mkdir hello
+ 1706  cd hello/
+ 1707  git clone https://github.com/stefribeiro/Estudo.git
+ 1708  git clone git@github.com:stefribeiro/Estudo.git
+ 1709  code Estudo/
+ 1710  npm start
+ 1711  cd app07/
+ 1712  npm start
+ 1713  cd Cursos/CBFCursos/
+ 1714  ls
+ 1715  code React-CFBCursos/
+ 1716  cd Cursos/
+ 1717  mkdir Curso_JS-HoraDeCodar
+ 1718  code Curso_JS-HoraDeCodar/
+ 1719  code .
+ 1720  code Curso_JS-HoraDeCodar/
+ 1721  sudo htop
+ 1722  sudo apt install blueman 
+ 1723  blueman-applet &
+ 1724  htop
+ 1725  history 
+ 1726  htop
+ 1727  ?
+ 1728  help
+ 1729  iwho
+ 1730  who
+ 1731  whoami
+ 1732  mkdir -p kubdevhello/hello
+ 1733  cd kubdevhello/hello
+ 1734  pw d
+ 1735  pwd
+ 1736  sudo htop
+ 1737  sudo /sbin/vboxconfig 
+ 1738  sudo /sbin/vboxconfig
+ 1739  sudo apt install linux-headers-5.17.0-3-amd64 
+ 1740  sudo /sbin/vboxconfig
+ 1741  ls
+ 1742  cat acces 
+ 1743  cd Área\ de\ trabalho/Gerência/
+ 1744  ssh -i pratica-02/key-definitiva.pem ubuntu@52.203.96.128
+ 1745  cd Área\ de\ trabalho/Gerência/
+ 1746  cd ..
+ 1747  cd Dasafio\ DevOps/
+ 1748  ls
+ 1749  cd ..
+ 1750  cd Gerência/
+ 1751  ls
+ 1752  cd pratica-02/ 
+ 1753  s
+ 1754  ls
+ 1755  ssh -i pratica-02/key-definitiva.pem ubuntu@52.203.96.128
+ 1756  ssh -i key-definitiva.pem ubuntu@52.203.96.128
+ 1757  cd ~
+ 1758  ls
+ 1759  cd Imersao/
+ 1760  ls
+ 1761  cd Iniciativa_DevOps-kubedev/
+ 1762  ls
+ 1763  cd ..
+ 1764  mkdir Iniciativa_DevOps
+ 1765  cd Iniciativa_DevOps
+ 1766  mkdir Desafio_02
+ 1767  cd Desafio_02/
+ 1768  git clone git@github.com:MoglesonLima/kube-news.git
+ 1769  code kube-news/
+ 1770  ping 52.203.96.128
+ 1771  watch 'kubectl get po'
+ 1772  kubectl apply  -f deployment.yaml 
+ 1773  kubectl rollout history deployment meudeployment 
+ 1774  docker login -u moglesonlima
+ 1775  nano ~/docker
+ 1776  cd ~/Downloads/
+ 1777  sudo gdebi dbeaver-ce_22.1.0_amd64.deb 
+ 1778  cd Downloads/
+ 1779  sudo gdebi discord-0.0.18.deb 
+ 1780  cd Imersao/
+ 1781  ls
+ 1782  cd conversao-temperatura/
+ 1783  ls
+ 1784  code .
+ 1785  cd ..
+ 1786  code kube-news/
+ 1787  cd conversao-temperatura/
+ 1788  ls
+ 1789  cd src/
+ 1790  ls
+ 1791  docker build -t moglesonlima/api-conversao:v1.0 .
+ 1792  sudo systemctl start docker.service 
+ 1793  docker build -t moglesonlima/api-conversao:v1.0 .
+ 1794  docker image ls
+ 1795  docker push moglesonlima/api-conversao:v1.0
+ 1796  docker tag moglesonlima/api-conversao:v1.0 moglesonlima/api-conversao:latest
+ 1797  docker push moglesonlima/api-conversao:latest 
+ 1798  cd ..
+ 1799  cd k8s/
+ 1800  ls
+ 1801  k3d cluster list
+ 1802  k3d cluster rm meucluster
+ 1803  k3d cluster rm meucluster-4
+ 1804  k3d cluster create --server 3 --agents 3
+ 1805  k3d cluster list
+ 1806  k3d cluster create 3 --servers 3 --agents
+ 1807  k3d cluster create --servers 3 --agents 3
+ 1808  kubectl apply -f deployment.yaml
+ 1809  htop
+ 1810  sudo swapoff /dev/sdb3
+ 1811  kubectl get all
+ 1812  htop
+ 1813  kubectl apply -f deployment.yaml 
+ 1814  watch 'kubectl get po'
+ 1815  kubectl get all
+ 1816  kubectl apply -f deployment.yaml 
+ 1817  kubectl port-forward services/api-conversao 8080:80
+ 1818  kubectl get all
+ 1819  code ../../kube-news/k8s/deployment.yaml 
+ 1820  kubectl apply -f deployment.yaml 
+ 1821  kubectl get all
+ 1822  kubectl delete pod/api-conversao-7857d58cc8-bhdxn service/api-conversao deployment.apps/api-conversao
+ 1823  kubectl apply -f deployment.yaml 
+ 1824  kubectl get all
+ 1825  kubectl get services 
+ 1826  kubectl apply -f deployment.yaml 
+ 1827  code .
+ 1828  cd ..
+ 1829  cat kube-news/k8s/deployment.yaml 
+ 1830  kubectl apply -f deployment.yaml 
+ 1831  cd conversao-temperatura/
+ 1832  cd k8s/
+ 1833  kubectl apply -f deployment.yaml 
+ 1834  kubectl delete -f deployment.yaml 
+ 1835  kubectl delete pod/api-conversao-d9fdd57d4-nczr7 service/api-conversao deployment.apps/api-conversao
+ 1836  kubectl get all
+ 1837  kubectl delete service/apiconversao 
+ 1838  kubectl get all
+ 1839  kubectl delete -f deployment.yaml 
+ 1840  kubectl appĺy -f deployment.yaml 
+ 1841  kubectl apply -f deployment.yaml 
+ 1842  kubectl get all
+ 1843  cd ..
+ 1844  git add .
+ 1845  git commit -m "Udpdate"
+ 1846  git push 
+ 1847  nano .git/config 
+ 1848  git push 
+ 1849  htop
+ 1850  sudo systemctl stop docker
+ 1851  htop
+ 1852  sudo systemctl start docker
+ 1853  sudo swapoff /dev/sdb3
+ 1854  sudo swapoff /dev/sda3 
+ 1855  k3d cluster list
+ 1856  cd Imersao/conversao-temperatura/
+ 1857  nano k8s/deployment.yaml 
+ 1858  kubectl apply -f k8s/deployment.yaml 
+ 1859  k3d cluster delete 
+ 1860  k3d cluster create mycluster-01 --servers 3 --agents 3
+ 1861  kubectl apply -f k8s/deployment.yaml 
+ 1862  kubectl get all
+ 1863  socker container ls
+ 1864  docker container ls
+ 1865  conde .
+ 1866  code .
+ 1867  kubectl apply -f k8s/deployment.yaml 
+ 1868  kubectl delete -f k8s/deployment.yaml 
+ 1869  cd ..
+ 1870  ls
+ 1871  kubectl delete -f kube-news/k8s/deployment.yaml 
+ 1872  kubectl apply -f kube-news/k8s/deployment.yaml 
+ 1873  kubectl get all
+ 1874  kubectl apply -f kube-news/k8s/deployment.yaml 
+ 1875  kubectl get all
+ 1876  ls
+ 1877  kubectl get all
+ 1878  docker image rm 
+ 1879  kubectl delete -f kube-news/k8s/deployment.yaml 
+ 1880  kubectl get all
+ 1881  k3d cluster delete mycluste*
+ 1882  k3d cluster list
+ 1883  k3d cluster delete mycluster-01
+ 1884  ls
+ 1885  code Iniciativa_DevOps-kubedev/
+ 1886  sudo swapoff /dev/sda3 
+ 1887  code .
+ 1888  nano k8s/deployment.yaml 
+ 1889  cd ~
+ 1890  nano test
+ 1891  kubectl apply -f test.yaml 
+ 1892  kubectl delete -f test.yaml 
+ 1893  htop
+ 1894  ls
+ 1895  cd Iniciativa_DevOps-kubedev/
+ 1896  ls
+ 1897  code .
+ 1898  cat manifestos/service.yaml 
+ 1899  ls
+ 1900  cd ..
+ 1901  cd conversao-temperatura/
+ 1902  ls
+ 1903  cd src/
+ 1904  ls
+ 1905  docker build -f Dockerfile 
+ 1906  docker build -f Dockerfile .
+ 1907  sudo systemctl start docker.service 
+ 1908  docker build -f Dockerfile 
+ 1909  docker build -f Dockerfile .
+ 1910  ls
+ 1911  docker image rm moglesonlima/*
+ 1912  docker image rm moglesonlima/api-conversao:v1.0 
+ 1913  docker image rm moglesonlima/api-conversao:latest 
+ 1914  docker image rm node:16.15.0 
+ 1915  docker image rm node:latest 
+ 1916  docker image rm sonarqube:7.9.3-community 
+ 1917  docker image rm rancher/k3s:v1.23.6-k3s1 
+ 1918  docker image rm hello-world:latest 
+ 1919  docker image rm dpage/pgadmin4:latest 
+ 1920  docker image rm moglesonlima/kube-news:
+ 1921  docker image rm moglesonlima/kube-news:latest 
+ 1922  docker image rm 
+ 1923  docker -t moglesonlima/conversoa-temperatura:v1 .
+ 1924  history 
+ 1925  history | grep "docker"
+ 1926  docker push moglesonlima/conversoa-temperatura:v1 
+ 1927  docker tag moglesonlima/conversoa-temperatura:v1 moglesonlima/conversoa-temperatura:latest
+ 1928  docker push moglesonlima/conversoa-temperatura:latest
+ 1929  kubectl get all
+ 1930  kubectl get -all
+ 1931  kubectl get all
+ 1932  kubectl get pod
+ 1933  k3d custer list
+ 1934  k3d cluster list
+ 1935  k3d cluster create my-cluster --servers 2 --agents 2 -p "30000:30000@loadbalancer" 
+ 1936  docker container ls
+ 1937  kubectl apply -f ../k8s/deployment.yaml 
+ 1938  kubectl get all
+ 1939  kubectl apply -f ../k8s/deployment.yaml 
+ 1940  history | greep "kubectl"
+ 1941  history | grep "kubectl"
+ 1942  history | grep "port"
+ 1943  kubectl port-forward services/conversao 8080:80
+ 1944  cd ..
+ 1945  kubectl delete -f k8s/deployment.yaml 
+ 1946  kubectl apply -f k8s/deployment.yaml 
+ 1947  kubectl get all
+ 1948  kubectl apply -f k8s/deployment.yaml 
+ 1949  kubectl get all
+ 1950  kubectl apply -f k8s/deployment.yaml 
+ 1951  kubectl get all
+ 1952  kubectl apply -f k8s/deployment.yaml 
+ 1953  git add .
+ 1954  git commit -m "add final version"
+ 1955  git push 
+ 1956  git pull 
+ 1957  git config pull.rebase false
+ 1958  git config --global
+ 1959  git status 
+ 1960  cat k8s/deployment.yaml 
+ 1961  git add .
+ 1962  git status 
+ 1963  git checkout 
+ 1964  git push -f
+ 1965  kubectl get all
+ 1966  kubectl delete -f k8s/deployment.yaml 
+ 1967  cd ..
+ 1968  ls
+ 1969  cd Iniciativa_DevOps-kubedev/
+ 1970  ls
+ 1971  cat README.md 
+ 1972  mkdir Terraform
+ 1973  cd Terraform/
+ 1974  cd ~
+ 1975  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+ 1976  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+ 1977  lsb_release -cs
+ 1978  nano /etc/apt/sources.list
+ 1979  nano /etc/apt/sources.list.d/vscode.list 
+ 1980  nano /etc/apt/sources.list.d/docker.list 
+ 1981  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main"
+ 1982  sudo nano /etc/apt/sources.list.d/terraform.list
+ 1983  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+ 1984  nano /etc/apt/sources.list.d/docker.list 
+ 1985  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main"
+ 1986  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+ 1987  nano /usr/bin/apt-add-repository 
+ 1988  wget -qO - terraform.gpg https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/terraform-archive-keyring.gpg
+ 1989  sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/terraform-archive-keyring.gpg] https://apt.releases.hashicorp.com bullseye main" > /etc/apt/sources.list.d/terraform.list
+ 1990  sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/terraform-archive-keyring.gpg] https://apt.releases.hashicorp.com bullseye main" | sudo tee /etc/apt/sources.list.d/terraform.list
+ 1991  cat /etc/apt/sources.list.d/terraform.list
+ 1992  sudo apt update
+ 1993  sudo apt install terraform
+ 1994  apt policy terraform
+ 1995  cd iac/
+ 1996  terraform init 
+ 1997  terraform apply
+ 1998  history 
+ 1999  history > history

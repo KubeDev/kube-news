@@ -79,11 +79,12 @@ spec:
   selector:
     app: kubenews
   ports:
-  - port: 80
+  - port: 30000
     targetPort: 8080
-    nodePort: 30000
-  type: NodePort
-
+    #nodePort: 30000
+  #apenas em ambiente local
+  #type: NodePort
+  type: LoadBalancer
 
 #const DB_DATABASE = process.env.DB_DATABASE || "kubedevnews";
 #const DB_USERNAME = process.env.DB_USERNAME || "kubedevnews";
