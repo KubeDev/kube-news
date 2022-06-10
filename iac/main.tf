@@ -42,3 +42,35 @@ variable "do_token" {}
 variable "k8s_name" {}
 
 variable "region" {}
+
+
+output "kube_endpoint" {
+  valuvalue =   digitalocean_kubernetes_cluster.k8s_iniciativa_DevOps.endpoint
+}
+
+# output "kube_config" {
+#   valuvalue =   digitalocean_kubernetes_cluster.k8s_iniciativa_DevOps.0.raw_config
+# }
+
+#terraform output
+
+#pegando o kubconfig
+
+#Sempre q adicionar um resource é preciso usar terraform init
+#antes de um apply
+
+resource "local_file" "foo" {
+    content  = digitalocean_kubernetes_cluster.k8s_iniciativa_DevOps.kube_config.0.raw_config
+    filename = "kube_config.yaml"
+}
+
+#kubectl get nodes --kubeconfig kube_config.yaml
+#cp kubr_config.yaml ~/.kube/config
+#Realizar os passos anteriores apenas pra poder acessar o cluster criado via 
+#Terraform
+
+#Destruindo a INFRA
+#kubectl delete -f deployment.yaml
+
+#terrraform destroy
+#Literalmente mata toda a infra
