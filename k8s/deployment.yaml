@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: kubenews
-        image: moglesonlima/kube-news:v1
+        image: moglesonlima/kube-news:v2
         env:
         - name: DB_DATABASE
           value: "kubenews_db"
