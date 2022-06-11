@@ -104,3 +104,5 @@ node_modules/
 # .tern-port
 
 *.Identifier
+
+.vscode
