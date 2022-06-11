@@ -2,9 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "Kubernetes" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Kubernetes" ]
     
   workflow_dispatch:
 
