@@ -1,0 +1,96 @@
+
+# Deployment postgresql
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector:
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        app: postgre
+    spec:
+      containers:
+      - name: postgre
+        image: postgres:14.3
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "kube@123"
+        - name: POSTGRES_USER
+          value: "kubenews"
+        - name: POSTGRES_DB
+          value: "kubenews_db"
+
+---
+#Service postgre
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    app: postgre
+  ports:
+  #Porta usada pelo service
+  - port: 5432
+    #Porta Direcionada para o pod
+    targetPort: 5432
+
+---
+#Deployment Aplicacao
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenews
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubenews
+  template:
+    metadata:
+      labels:
+        app: kubenews
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: kubenews
+        image: moglesonlima/kube-news:latest
+        env:
+        - name: DB_DATABASE
+          value: "kubenews_db"
+        - name: DB_USERNAME
+          value: "kubenews"
+        - name: DB_PASSWORD
+          value: "kube@123"
+        - name: DB_HOST
+          value: postgre
+---
+#Service Aplicacao
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-news
+spec:
+  selector:
+    app: kubenews
+  ports:
+  - port: 30000
+    targetPort: 8080
+    #nodePort: 30000
+  #apenas em ambiente local
+  #type: NodePort
+  type: LoadBalancer
+
+#const DB_DATABASE = process.env.DB_DATABASE || "kubedevnews";
+#const DB_USERNAME = process.env.DB_USERNAME || "kubedevnews";
+#const DB_PASSWORD = process.env.DB_PASSWORD || "Pg#123";
+#const DB_HOST = process.env.DB_HOST || "localhost";
