@@ -1,7 +1,7 @@
 # kube-news
 
 
-##Road map DevOps
+##Road map DevOps -
 
 + SO + Linux
 + Gerenciamento de codigo
