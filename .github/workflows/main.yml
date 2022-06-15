@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v3.0.0
         with:
           file: ./src/Dockerfile
-          contect: ./src/
+          contect: ./src
           push: true
           tags: |
             felipealves26/kube-news:latest
