@@ -47,6 +47,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
+  replicas: 20
   selector:
     matchLabels:
       app: kubenews
@@ -81,5 +82,5 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
+      nodePort: 30000 #Porta Utilizada pelo k3d
   type: NodePort
