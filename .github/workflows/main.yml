@@ -54,6 +54,6 @@ jobs:
         with:
           images: darosas76/kube-news:${{github.run_number}}
           manifests: 
-            deployment.yanl
+            k8s/deployment.yaml
       
       
