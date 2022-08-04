@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>
+    <%= post.title %>
+  </title>
+
+  <%- include('./partial/bootstrap-css'); %>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .container {
+        max-width: 960px;
+      }
+    </style>
+
+</head>
+
+<body class="bg-light">
+
+  <%- include('./partial/nav-bar'); %>
+
+  <div class="container">
+    <main>
+      <div class="py-3 text-center">
+        <h2>
+          <%= post.title %>
+        </h2>
+      </div>
+      <div class="row g-5">
+        <div class="col-md-12 col-lg-12">
+          <div class="row g-3">
+            <p>
+            <p class="lead">
+              <%- post.content %>
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <%- include('./partial/bootstrap-js'); %>
+</body>
+
+</html>
