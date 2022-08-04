@@ -36,3 +36,24 @@ jobs:
          tags: |
            darosas76/kube-news:latest
            darosas76/kube-news:${{github.run_number}}
+  
+  CD:
+      # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Kubernetes Set Context
+        uses: Azure/k8s-set-context@v3.0
+        with:
+           method: kubeconfig
+           kubeconfig: ${{secrests.K8S_CONFIG}}
+           
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v4.3
+        with:
+          images: darosas76/kube-news:${{github.run_number}}
+          manifests: 
+            k8s/deployment.yanl
+      
+      
