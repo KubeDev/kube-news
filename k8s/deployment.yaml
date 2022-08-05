@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector:
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        app: postgre
+    spec:
+      containers:
+      - name: postgre
+        image: postgres:14.3
+        # TODO: comentar na hora de subir pro github
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "kubenews_password123"
+        - name: POSTGRES_USER
+          value: "kubenews_user"
+        - name: POSTGRES_DB
+          value: "kubenews_database"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    # matchLabels:
+    app: postgre
+  ports:
+  - protocol: TCP  # protocolo padrao
+    port: 5432
+    targetPort: 5432
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenews
+spec:
+  selector:
+    matchLabels:
+      app: kubenews
+  template:
+    metadata:
+      labels:
+        app: kubenews
+    spec:
+      containers:
+      - name: kubenews
+        image: leommiranda/kube-news:v01
+        # TODO: comentar limite de recursos na hora de dar commit
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 5432
+        env:
+        - name: DB_PASSWORD
+          value: "kubenews_password123"
+        - name: DB_USERNAME
+          value: "kubenews_user"
+        - name: DB_DATABASE
+          value: "kubenews_database"
+        - name: DB_HOST
+          value: "postgre"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubenews
+spec:
+  selector:
+    # matchLabels:
+    app: kubenews
+  ports:
+  - protocol: TCP  # protocolo padrao
+    port: 80
+    targetPort: 8080
+    nodePort: 30000
+  type: NodePort  # ambiente de nuvem, usaria LoadBalancer

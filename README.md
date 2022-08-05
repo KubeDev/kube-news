@@ -1,5 +1,23 @@
 # kube-news
 
+## Como baixar e rodar
+
+```
+# clonar o repositório
+git clone https://github.com/leommiranda/kube-news
+
+# ir para a pasta "k8s" deste repositório
+cd kube-news/k8s
+
+# rodar
+kubectl apply -f deployment.yaml
+
+# conferir até estar rodando (dica: usar watch)
+kubectl get all
+
+# acessar localhost:30000 pelo browser
+```
+
 ## Como atualizar a imagem docker
 
 ```
