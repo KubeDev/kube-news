@@ -73,4 +73,8 @@ spec:
   - port: 80
     targetPort: 8080
     nodePort: 30000
+<<<<<<< HEAD
   type: NodePort
+=======
+  type: NodePort
+>>>>>>> c87f30cbb2a1268fe3690fd6ac5f29c665499ba6
