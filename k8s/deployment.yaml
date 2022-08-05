@@ -19,11 +19,11 @@ spec:
         - containerPort: 5432
         env:
           - name: POSTGRES_PASSWORD
-            value: "Pg123"
+            value: "kube#123"
           - name: POSTGRES_USER
-            value: "kubedevnews"
+            value: "kubenews"
           - name: POSTGRES_DB
-            value: "kubedevnews"
+            value: "kubenews"
 ---
 apiVersion: v1
 kind: Service
@@ -58,9 +58,9 @@ spec:
            - name: DB_USERNAME
              value: "kubedevnews"
            - name: DB_PASSWORD
-             value: "Pg123"
+             value: "Pg#123"
            - name: DB_HOST
-             value: "postgre"
+             value: "localhost"
 ---
 apiVersion: v1
 kind: Service
