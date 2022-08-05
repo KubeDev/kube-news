@@ -72,5 +72,5 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
-    modePort: 30000
+    nodePort: 30000
   type: NodePort
