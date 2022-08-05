@@ -75,6 +75,11 @@ spec:
     nodePort: 30000
 <<<<<<< HEAD
   type: NodePort
+<<<<<<< HEAD
 =======
   type: NodePort
 >>>>>>> c87f30cbb2a1268fe3690fd6ac5f29c665499ba6
+=======
+
+
+>>>>>>> 22c480701ca3c879593cd89c3a8e3c305881b9bd
