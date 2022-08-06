@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: kubenews
-        image: leommiranda/kube-news:v01
+        image: leommiranda/kube-news:latest
         # TODO: comentar limite de recursos na hora de dar commit
         resources:
           limits:
@@ -90,4 +90,4 @@ spec:
     port: 80
     targetPort: 8080
     nodePort: 30000
-  type: NodePort  # ambiente de nuvem, usaria LoadBalancer
+  type: LoadBalancer
