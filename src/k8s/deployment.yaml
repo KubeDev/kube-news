@@ -33,8 +33,8 @@ spec:
   selector:
     app: postgre
   ports:
-    - port: 5432
-      targetPort: 5432
+  - port: 5432
+    targetPort: 5432
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -51,18 +51,18 @@ spec:
         app: kubenews
     spec:
       containers:
-        - name: kubenews
-          #image: danncastro/kube-news:v1
-          image: danncastro/kube-news:v2
-          env: 
-          - name: DB_DATABASE
-            value: "kubenews"
-          - name: DB_USERNAME
-            value: "kubenews"
-          - name: DB_PASSWORD
-            value: "127OWtiQws@6"
-          - name: DB_HOST
-            value: "postgres"
+      - name: kubenews
+        #image: danncastro/kube-news:v1
+        image: danncastro/kube-news:v2
+        env: 
+        - name: DB_DATABASE
+          value: "kubenews"
+        - name: DB_USERNAME
+          value: "kubenews"
+        - name: DB_PASSWORD
+          value: "127OWtiQws@6"
+        - name: DB_HOST
+          value: "postgre"
 ---
 apiVersion: v1
 kind: Service
