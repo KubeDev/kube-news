@@ -41,6 +41,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
+#mudando replicas
   replicas: 5
   selector:
     matchLabels:
