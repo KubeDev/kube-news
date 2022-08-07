@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [CI]
     steps:
-      - uses: actions/checkout@v
+      - uses: actions/checkout@v3
       - name: Kubernetes Set Context
         uses: Azure/k8s-set-context@v3.0
         with:
