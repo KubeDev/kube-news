@@ -34,8 +34,8 @@ jobs:
           context: ./src
           push: true
           tags: |
-            carlosmagogcs/kube-news:latest
-            carlosmagogcs/kube-news:${{github.run_number}}
+            carlosmagnogcs/kube-news:latest
+            carlosmagnogcs/kube-news:${{github.run_number}}
             
             
           
