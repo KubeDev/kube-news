@@ -25,7 +25,7 @@ jobs:
           push: true
           tags: |
             danncastro/kube-news:latest
-            danncastr/kube-news:${{github.run_number}}
+            danncastro/kube-news:${{github.run_number}}
        
        
        
