@@ -42,7 +42,7 @@ metadata:
   name: kubenews
 spec:
 #mudando replicas novamente
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: kubenews
