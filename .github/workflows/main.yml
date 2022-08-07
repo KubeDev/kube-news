@@ -38,6 +38,7 @@ jobs:
             asfcjr/kube-news:${{github.run_number}}
   CD:
     runs-on: ubuntu-latest
+    needs: [CI]
     steps:
       - uses: actions/checkout@v3
       - name: Kubernetes Set Context
