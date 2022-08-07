@@ -3,14 +3,30 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+  
 jobs:
-  build:
+  CI:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      
+      - name: Docker Login
+        uses: docker/login-action@v2.0.0
+        with:
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{secrets.DOCKERHUB_PASSWORD}}
+      
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.1.1
+        with:
+          file: ./src/Dockerfile
+          context: ./src
+          push: true
+          tags: |
+            danncastro/kube-news:latest
+            danncastr/kube-news:${{github.run_number}}
+       
+       
+       
+       
