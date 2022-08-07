@@ -39,6 +39,8 @@
 
 # # Dependency directories
 node_modules/
+iac/terraform.tfvars
+k8s/kube_config.yaml
 # jspm_packages/
 
 # # TypeScript v1 declaration files
@@ -104,4 +106,3 @@ node_modules/
 # .tern-port
 
 *.Identifier
-iac/terraform.tfvars
