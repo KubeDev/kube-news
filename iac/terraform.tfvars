@@ -1,0 +1,3 @@
+do_token="dop_v1_263bed6debf6d9d72718890d95b266ababa1623234065afefb1a51fbc01e0da7"
+k8s_name="k8s-iniciativa-danielrosas"
+region="nyc1"
