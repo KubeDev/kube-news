@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-news
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-news
+      version: "v1"
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: kube-news
+        version: "v1"
+        forceredeploy: BuildID-First-Build
+    spec:
+      containers:
+        - name: kube-news-app
+          image: miraldo/kube-news:latest
+          imagePullPolicy: Always
+          env:
+            - name: DB_USERNAME
+              value: "kubenews"
+            - name: DB_PASSWORD
+              value: "kubenews#123"
+            - name: DB_DATABASE
+              value: "kubenews"
+            - name: DB_HOST
+              value: "postgres"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "256Mi"
+              cpu: "1"
+          ports:
+            - name: http
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-news
+  labels:
+    app: kube-news
+spec:
+  selector:
+    app: kube-news
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
