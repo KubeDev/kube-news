@@ -10,7 +10,7 @@ WORKDIR /app
 RUN npm install
 
 #export o port 8080
-EXPOSE 8081
+EXPOSE 8080
 
 #Executar aplicação
 CMD [ "node", "server.js" ]
