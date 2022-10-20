@@ -6,7 +6,7 @@ pipeline {
         stage ('Build Docker Image'){
             steps {
                 script {
-                    dockerapp = docker.build("miraldo/kube-new:${env.BUILD_ID}", '-f ./Dockerfile .')
+                    dockerapp = docker.build("miraldo/kube-news:${env.BUILD_ID}", '-f ./Dockerfile .')
                 }
 
             }
