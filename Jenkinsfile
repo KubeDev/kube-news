@@ -26,7 +26,7 @@ pipeline {
 
         stage('Deploy k8s'){
             environment {
-                tag_version = "${env.BUILD_ID}"
+                tag_version = "jenkins-${env.BUILD_ID}"
             }
             steps {
                 withKubeConfig ([credentialsId: 'kube_config']) {
