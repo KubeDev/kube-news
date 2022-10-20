@@ -17,8 +17,8 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com','cred_dockerhub'){
                         dockerapp.push('latest')
-                        dockerapp.push("${env.BUILD_ID}")
-                        dockerapp.push('jenkins')
+                        dockerapp.push("jenkins")
+                        dockerapp.push("jenkins-${env.BUILD_ID}")
                     }
                 }
             }
