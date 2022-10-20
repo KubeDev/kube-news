@@ -1,79 +1,78 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: postgre
+metadata:
+  name: postgree
 spec:
   selector:
     matchLabels:
-      app: postgre
-  template: 
+      app: postgree
+  template:
     metadata:
       labels:
-        app: postgre
+        app: postgree
     spec:
-      containers: 
-        - name: postgre
+      containers:
+        - name: postgree
           image: postgres:15.0
           ports:
           - containerPort: 5432
           env:
-          - name: POSTGRES_DB
-            value: "kubenews"
-          - name: POSTGRES_USER
-            value: "kubenews"
-          - name: POSTGRES_PASSWORD
-            value: "Pg#123"
+            - name: POSTGRES_DB
+              value: "kubenews"
+            - name: POSTGRES_USER
+              value: "kubenews"
+            - name: POSTGRES_PASSWORD
+              value: "Pg#123"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgre
-spec: 
+  name: postgree
+spec:
   selector:
-    app: postgre
+    app: postgree
   ports:
     - port: 5432
-  type: ClusterIP  
+  type: ClusterIP
 
----   
-
+---
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: web
 spec:
   selector:
     matchLabels:
       app: web
-  template: 
+  template:
     metadata:
       labels:
         app: web
     spec:
-      containers: 
+      containers:
         - name: web
-          image: fabricioveronez/kube-news:v1
+          image: vinifurt22/kube-news:v1
           ports:
           - containerPort: 8080
           env:
-          - name: DB_DATABASE
-            value: "kubenews"
-          - name: DB_USERNAME
-            value: "kubenews"
-          - name: DB_PASSWORD
-            value: "Pg#123"
-          - name: BD_HOST
-            value: "postgre"
----
+            - name: DB_DATABASE
+              value: "kubenews"
+            - name: DB_USERNAME
+              value: "kubenews"
+            - name: DB_PASSWORD
+              value: "Pg#123"
+            - name: DB_HOST
+              value: "postgree"
+--- 
 apiVersion: v1
 kind: Service
 metadata:
   name: web
-spec: 
+spec:
   selector:
     app: web
   ports:
     - port: 80
       targetPort: 8080
       nodePort: 30000
-  type: NodePort       
+  type: NodePort
