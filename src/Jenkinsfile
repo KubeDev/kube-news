@@ -2,6 +2,7 @@ pipeline {
     agent any
     
     stages {
+        
         stage('Build Bocker Image') {
             steps {
                 script {
