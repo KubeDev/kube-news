@@ -21,7 +21,7 @@ pipeline {
     stage("Deploy Kube Apply") {
       steps {
         script {
-          withKubeconfig([credentialsId: "kubeconfig"]) {
+          withKubeConfig([credentialsId: "kubeconfig"]) {
             sh 'kubectl apply -f ../Terraform/service.yaml'
           }
         }
