@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Destroy Kubenews Project") {
       environment {
-        buildNumber = Jenkins.instance.getItem('jobName').lastSuccessfulBuild.number
+        buildNumber = "${Jenkins.instance.getItem('jobName').lastSuccessfulBuild.number}"
       }
       steps {
         script {
