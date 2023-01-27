@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages {
     stage("Destroy Kubenews Project") {
-      def buildNumber = Jenkins.instance.getItem('jobName').lastSuccessfulBuild.number
+      environment {
+        buildNumber = Jenkins.instance.getItem('jobName').lastSuccessfulBuild.number
+      }
       steps {
         script {
           withKubeConfig([credentialsId: "kubeconfig"]) {
