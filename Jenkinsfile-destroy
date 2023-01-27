@@ -9,7 +9,7 @@ pipeline {
         script {
           withKubeConfig([credentialsId: "kubeconfig"]) {
             sh "sed -i 's/{{tag}}/16/g' ./k8s/service.yaml"
-            sh 'kubectl apply -f ./k8s/service.yaml'
+            sh 'kubectl delete -f ./k8s/service.yaml'
           }
         }
       }
