@@ -2,14 +2,13 @@ pipeline {
   agent any
   stages {
     stage("Destroy Kubenews Project") {
-      environment {
-        tag_version = "${env.BUILD_ID}"
-      }
+      def buildNumber = Jenkins.instance.getItem('jobName').lastSuccessfulBuild.number
       steps {
         script {
           withKubeConfig([credentialsId: "kubeconfig"]) {
-            sh "sed -i 's/{{tag}}/16/g' ./k8s/service.yaml"
-            sh 'kubectl delete -f ./k8s/service.yaml'
+            sh "sed -i 's/{{tag}}/$buildNumber/g' 'G:/My Drive/Study-Notebook/JornadaDevOps - Fabrizio Veronez/aula2-Kubernetes/kube-news/k8s/service.yaml'"
+            sh "kubectl delete -f 'G:/My Drive/Study-Notebook/JornadaDevOps - Fabrizio Veronez/aula5-Prometheus-Grafana/deploy-prom-grafana.yaml'"
+            sh "kubectl delete -f 'G:/My Drive/Study-Notebook/JornadaDevOps - Fabrizio Veronez/aula2-Kubernetes/kube-news/k8s/service.yaml'"
           }
         }
       }
