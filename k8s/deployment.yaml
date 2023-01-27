@@ -33,6 +33,7 @@ spec:
     app: postgre
   ports:
     - port: 5432
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -50,7 +51,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: matheussenra/kubenews:v2
+          image: matheussenra/kubenews:latest
           ports:
           - containerPort: 8080
           env:
@@ -73,5 +74,4 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
