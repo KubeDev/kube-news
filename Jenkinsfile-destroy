@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  stages {
+    stage("Destroy Kubenews Project") {
+      environment {
+        tag_version = "${env.BUILD_ID}"
+      }
+      steps {
+        script {
+          withKubeConfig([credentialsId: "kubeconfig"]) {
+            sh "sed -i 's/{{tag}}/16/g' ./k8s/service.yaml"
+            sh 'kubectl apply -f ./k8s/service.yaml'
+          }
+        }
+      }
+    }
+  }
+}
