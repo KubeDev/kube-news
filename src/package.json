@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "author": "",
@@ -18,5 +18,10 @@
     "pg-hstore": "^2.3.4",
     "prom-client": "^14.0.1",
     "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "request": "^2.88.2"
   }
 }
