@@ -6,7 +6,7 @@ pipeline{
             steps{
                 script{
                     echo "========executing Building Docker Image========"
-                    dockerapp = docker.build("joaomartinelli/kube-news:v1", '-f ./src/dockerfile ./src')
+                    dockerapp = docker.build("joaomartinelli/kube-news:${env.BUILD_ID}", '-f ./src/dockerfile ./src')
                 }
             }
             post{
@@ -21,6 +21,28 @@ pipeline{
                 }
             }
         }
+        stage("Post Docker Image"){
+            steps{
+                script{
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
+                        docker.push('latest')
+                        docker.push("${env.BUILD_ID}")
+                }
+
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+
     }
     post{
         always{
