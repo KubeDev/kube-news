@@ -1,13 +1,11 @@
 pipeline{
-    agent{
-        label any
-    }
+    agent any
     stages{
         stage("Build Docker Image"){
-            echo "========executing Building Docker Image========"
+            
             steps{
-                
                 script{
+                    echo "========executing Building Docker Image========"
                     dockerapp = docker.build("joaomartinelli/kube-news:v1", '-f ./src/dockerfile ./src')
                 }
             }
