@@ -46,11 +46,12 @@ pipeline{
         }
          stage("Deploy Kubernetes"){
             
-            enviroment{
-                tag_version = "${env.BUILD_ID}"
-            }
+         
             
-            steps{
+            steps{ 
+                enviroment{
+                    tag_version = "${env.BUILD_ID}"
+                }
                 script{
                     echo "========Deploying Kubernetes========"
                     withKubeConfig([credentialsId: 'kube']){
