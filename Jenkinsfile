@@ -48,7 +48,7 @@ pipeline{
             steps{
                 script{
                     echo "========Deploying Kubernetes========"
-                    withKubeConfig([credentialsId: 'kubeconfig']){
+                    withKubeConfig([credentialsId: 'kube']){
                         sh 'kubectl apply -f k8s/deployment.yaml'
                         }
                 }
