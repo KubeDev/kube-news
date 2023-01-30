@@ -81,6 +81,6 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+      #nodePort: 30000
+  type: LoadBalancer
   #Vai redirecionar para a porta 8080 do container
