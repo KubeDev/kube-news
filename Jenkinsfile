@@ -5,7 +5,7 @@ pipeline {
         stage ('Build Image') {
             steps {
                 script {
-                    dockerapp = docker.build("diegosanchomagalhaes/kube-news:v2", '-f ./src/Dockerfile ./src') 
+                    dockerapp = docker.build("fabricioveronez/kube-news:${env.BUILD_ID}", '-f ./src/Dockerfile ./src') 
                 }                
             }
         }
@@ -21,7 +21,6 @@ pipeline {
             }
         }
 
-<<<<<<< HEAD
         stage('Deploy Kubernetes') {
             environment {
                 tag_version = "${env.BUILD_ID}"
@@ -32,9 +31,6 @@ pipeline {
                     sh 'kubectl apply -f ./k8s/deployment.yaml'                    
                 }
             }
-
-=======
->>>>>>> ac5e37c983269cf1a8fce53dfd11e54667ac0bad
+        }
     }
 }
-
