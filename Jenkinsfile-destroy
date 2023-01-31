@@ -6,8 +6,8 @@ pipeline {
         script {
           buildNumber = Jenkins.instance.getItem('kube-news').lastSuccessfulBuild.number
           withKubeConfig([credentialsId: "kubeconfig"]) {
-            sh "sed -i 's/{{tag}}/${buildNumber}/g' ./k8s/service.yaml"
-            sh "kubectl delete -f ./k8s/deploy-prom-grafana.yaml"
+            sh "sed -i 's/{{tag}}/v${buildNumber}/g' ./k8s/service.yaml"
+            // sh "kubectl delete -f ./k8s/deploy-prom-grafana.yaml"
             sh "kubectl delete -f ./k8s/service.yaml"
           }
         }
