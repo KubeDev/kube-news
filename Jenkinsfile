@@ -20,7 +20,7 @@ pipeline {
     }
     stage("Deploy Kube Apply") {
       environment {
-        tag_version = "${env.BUILD_ID}"
+        tag_version = "v${env.BUILD_ID}"
       }
       steps {
         script {
