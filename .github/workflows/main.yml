@@ -9,6 +9,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3.3.0
+     
+      - name: Authentication DockerHub
+        username: ${secrets.DOCKERHUB}
+        password: ${secrets.DOCKERPwd}
+        
+    
+      
       - name: ConstructionDockerImage
         uses: docker/build-push-action@v4.0.0
         with:
