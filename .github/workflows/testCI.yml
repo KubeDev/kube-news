@@ -1,0 +1,27 @@
+name: FirstCICD
+
+on:
+  push:
+    branches: ["main"]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3.3.0
+     
+      - name: Authentication DockerHub
+        username: ${secrets.DOCKERHUB_USER}
+        password: ${secrets.DOCKERHUB_PWD}
+        
+    
+      
+      - name: ConstructionDockerImage
+        uses: docker/build-push-action@v4.0.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: |
+            josealceu/live-kube-news:v1
+            josealceu/live-kube-news:latest
