@@ -11,8 +11,8 @@ jobs:
       - uses: actions/checkout@v3.3.0
      
       - name: Authentication DockerHub
-        username: ${secrets.DOCKERHUB}
-        password: ${secrets.DOCKERPwd}
+        username: ${secrets.DOCKERHUB_USER}
+        password: ${secrets.DOCKERHUB_PWD}
         
     
       
