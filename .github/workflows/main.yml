@@ -1,0 +1,20 @@
+name: FirstCICD
+
+on:
+  push:
+    branches: ["main"]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - name: ConstructionDockerImage
+        uses: docker/build-push-action@v4.0.0
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: |
+            fabricioveronez/live-kube-news:v1
+            fabricioveronez/live-kube-news:latest
