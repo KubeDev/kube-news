@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Build Doker Image') {
             steps {
-                dockerapp = docker.build("audaliodevops/kube-news:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
+                dockerapp = docker.build("audalio-devops/kube-news:v1", '-f ./src/Dockerfile ./src')
             }
         }
     }
