@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post
+spec:
+  selector:
+    matchLabels:
+      app: post
+  template:
+    metadata:
+      labels:
+        app: post
+    spec:
+      containers:
+        - name: post
+          image: postgres:15.0
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: "kubenews"
+            - name: POSTGRES_USER
+              value: "kubenews"
+            - name: POSTGRES_PASSWORD
+              value: "kubenews"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: post
+spec:
+  selector:
+    app: post
+  ports:
+    - port: 5432
+  type: ClusterIP
