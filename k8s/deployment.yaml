@@ -80,5 +80,4 @@ spec:
     - port: 80
       # faz o redirecionamento da porta 8080
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
