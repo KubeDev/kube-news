@@ -20,5 +20,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy Kubernetes') {
+            steps {
+                withKubeConfig([credentialsId: 'kubeconfig']) {
+                    sh 'kubectl apply -f ./k8s/deployment-db.yml' 
+                    sh 'kubectl apply -f ./k8s/deployment-web.yml' 
+                }
+            }
+        }
     }
 }
