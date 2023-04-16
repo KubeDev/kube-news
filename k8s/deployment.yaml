@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ilaraca/kube-news:v1
+          image: ilaraca/kube-news:{{TAG}}
           ports:
             - containerPort: 8080
           env:
