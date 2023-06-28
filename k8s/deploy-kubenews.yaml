@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenews-postgres
+spec:
+  selector:
+    matchLabels:
+      app: kubenews-postgres
+  template:
+    metadata:
+      labels:
+        app: kubenews-postgres
+    spec:
+      containers:
+      - name: kubenews-postgres
+        image: postgres:15.3
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: kubenews-db
+        - name: POSTGRES_USER
+          value: kubenews-user
+        - name: POSTGRES_PASSWORD
+          value: kubenews-pwd
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubenews-postgres
+spec:
+  selector:
+    app: kubenews-postgres
+  ports:
+  - port: 5432
+    targetPort: 5432
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenews-webapp
+spec:
+  selector:
+    matchLabels:
+      app: kubenews-webapp
+  template:
+    metadata:
+      labels:
+        app: kubenews-webapp
+    spec:
+      containers:
+      - name: kubenews-webapp
+        image: 3mmessias/kube-news:v1
+        ports:
+        - containerPort: 30000
+          name: http
+          protocol: TCP
+        env:
+        - name: DB_DATABASE 
+          value: kubenews-db
+        - name: DB_USERNAME
+          value: kubenews-user
+        - name: DB_PASSWORD
+          value: kubenews-pwd
+        - name: DB_HOST
+          value: kubenews-postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubenews-webapp
+spec:
+  selector:
+    app: kubenews-webapp
+  type: NodePort
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 30000
+      name: http
+
