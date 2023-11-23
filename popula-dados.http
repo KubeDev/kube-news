@@ -1,0 +1,48 @@
+
+POST http://localhost:4503/api/post
+Content-Type: application/json
+
+{
+  "artigos": [
+    {
+      "title": "Kubernetes na Nuvem",
+      "resumo": "Gerencie contêineres na nuvem.",
+      "description": "Saiba como utilizar o Kubernetes para orquestrar contêineres na nuvem, simplificando o gerenciamento de aplicações escaláveis."
+    },
+    {
+      "title": "CI/CD para DevOps",
+      "resumo": "Automatize o ciclo de vida de desenvolvimento e entrega.",
+      "description": "Descubra como implementar integração contínua e entrega contínua (CI/CD) em ambientes DevOps para acelerar o desenvolvimento de software."
+    },
+    {
+      "title": "Segurança na Nuvem",
+      "resumo": "Proteja suas aplicações e dados na nuvem.",
+      "description": "Saiba como garantir a segurança de suas aplicações e informações ao adotar soluções de computação em nuvem."
+    },
+    {
+      "title": "Automatização de Infraestrutura",
+      "resumo": "Automatize o provisionamento de recursos na nuvem.",
+      "description": "Aprenda a usar ferramentas de automação para criar, gerenciar e escalar infraestrutura na nuvem de forma eficiente."
+    },
+    {
+      "title": "Monitoramento na Nuvem",
+      "resumo": "Obtenha visibilidade completa de suas aplicações na nuvem.",
+      "description": "Descubra a importância do monitoramento de aplicações e infraestrutura na nuvem e como isso pode melhorar o desempenho e a confiabilidade."
+    },
+    {
+      "title": "Containers vs. VMs",
+      "resumo": "Comparando tecnologias de virtualização.",
+      "description": "Explore as diferenças entre contêineres e máquinas virtuais (VMs) e quando usar cada uma para otimizar sua infraestrutura."
+    },
+    {
+      "title": "Estratégias de Implantação na Nuvem",
+      "resumo": "Escolha a abordagem certa para suas aplicações.",
+      "description": "Aprenda sobre diferentes estratégias de implantação na nuvem, como IaaS, PaaS e SaaS, e como selecionar a mais adequada para suas necessidades."
+    },
+    {
+      "title": "DevOps como Cultura Organizacional",
+      "resumo": "Transforme sua empresa com DevOps.",
+      "description": "Descubra como adotar DevOps como uma cultura organizacional pode melhorar a colaboração entre equipes e acelerar o desenvolvimento de software."
+    }
+  ]
+}

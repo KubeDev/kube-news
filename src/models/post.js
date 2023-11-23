@@ -33,7 +33,7 @@ Post.init({
     require: true
   },
   content: {
-    type: sequelize.DataTypes.STRING,
+    type: sequelize.DataTypes.STRING(2000),
     require: true
   },
 }, {

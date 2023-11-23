@@ -1,48 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%- include('./partial/bootstrap-css'); %>
-        <title>KubeBlog</title>
-</head>
-<body class="m-0 p-0">
-    <div class="container-fluid m-0 p-0">
-        <%- include('./partial/nav-bar'); %>
-        <!-- News  -->
-        <div>
-            <div>
-                <div class="row m-3" id="newsType">
-                    <h4></h4>
-                </div>
-                <div class="row me-2 ms-2" id="newsdetails">
-                    <% if (posts.length === 0) {%>
-                        <h3>Ainda não temos nenhum post, que tal você criar um ?</h3>
-                    <% } else { %>
-                        <% for(var i=0; i < posts.length; i++) { %>
-                            <div class="col-sm-12 col-md-4 col-lg-3 p-2 card">
-                                <div class="p-2">
-                                    <div>
-                                        <h5 class="card-title">
-                                            <%= posts[i].title %>
-                                        </h5>
-                                        <h6 class="text-primary">
-                                            <%= posts[i].publishDate %>
-                                        </h6>
-                                        <p class="text-muted">
-                                            <%= posts[i].summary %>
-                                        </p><a class="btn btn-dark" target="_blank"
-                                            href="/post/<%= posts[i].id %>">Saiba mais</a>
-                                    </div>
-                                </div>
-                            </div>
-                        <% } %>
-                    <% } %>                   
-                </div>
-            </div>
-        </div>
-    </div>
-    <%- include('./partial/bootstrap-js'); %>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubenews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+  </head>
+  <body>
+    
+      <%- include('./partial/header'); %>
 
+    <main>
+        <% if (posts.length === 0) {%>
+        <div class="no-posts__container">
+            <div class="no-posts__image">
+                <img src="/img/no-posts.gif" alt="Nenhum post">
+            </div>
+            <h1 class="no-posts__message">Ainda não temos nenhum post, que tal você criar um?</h1>
+            <a class="no-posts__button" href="/post">Novo Post</a>
+        </div>
+        <% } else { %>
+            <div class="posts-list__container">                
+                <div class="posts-list__grid">
+                    <% for(var i=0; i < posts.length; i++) { %>
+                    <div class="posts-list__item">
+                        <div class="post__card">
+                            <span class="post__card__date"><%= posts[i].publishDate %></span>
+                            <h4 class="post__card__title"><%= posts[i].title %></h4>
+                            <p class="post__card__description"><%= posts[i].summary %></p>
+                            <button class="post__card__button" onclick="location.href='/post/<%= posts[i].id %>';">Saiba Mais</button>
+                        </div>
+                    </div>
+                    <% } %>                    
+                </div>
+           </div>
+           <% } %>  
+    </main>
+    <%- include('./partial/footer'); %>
+  </body>
 </html>

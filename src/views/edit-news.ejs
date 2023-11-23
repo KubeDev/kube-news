@@ -1,86 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title>Novo Post</title>
-
-  <%- include('./partial/bootstrap-css'); %>
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .container {
-        max-width: 960px;
-      }
-    </style>
-</head>
-
-<body class="bg-light">
-
-  <%- include('./partial/nav-bar'); %>
-
-    <div class="container">
-      <main>
-        <div class="py-2 text-center">
-          <h2>Novo Post</h2>
-        </div>
-
-        <div class="row g-5">
-          <div class="col-md-12 col-lg-12">
-            <h4 class="mb-3"></h4>
-            <form class="needs-validation" action="/post" method="post" novalidate>
-              <div class="row g-3">
-                <div class="col-12">
-                  <label for="title" class="form-label">Título: <span class="text-muted"></span></label>
-                  <input type="text" class="form-control" id="title" name="title" placeholder="Título da Notícia"
-                    pattern=".{1,30}"
-                    required>
-                  <div class="invalid-feedback">
-                    Esse campo é obrigatório e deve ter no máximo 30 caracteres
-                  </div>
-                </div>
-                <div class="col-12">
-                  <label for="resumo" class="form-label">Resumo: <span class="text-muted"></span></label>
-                  <input type="text" class="form-control" id="resumo" name="resumo" placeholder="Resumo da Notícia"
-                    pattern=".{1,100}"
-                    required>
-                  <div class="invalid-feedback">
-                    Esse campo é obrigatório e deve ter no máximo 50 caracteres
-                  </div>
-                </div>
-                <div class="col-12">
-                  <label for="address" class="form-label">Notícia:</label>
-                  <textarea class="form-control" id="address" name="description" rows="20" required></textarea>
-                  <div class="invalid-feedback">
-                    Esse campo é obrigatório
-                  </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubenews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+  </head>
+  <body>
+    <%- include('./partial/header'); %>
+    <main>
+       <div class="post-form__container">
+          <h3 class="post-form__title">Novo Post</h3>
+          <form action="#" class="post-form__form" action="/post" method="post">
+            <div class="post-form__group">
+              <label for="" class="post-form__label">Título</label>
+              <input type="text" class="post-form__input" id="title" name="title" placeholder="Escreva o título da notícia" value="<%= post.title %>">
+              <% if (valido === false) {%>
+              <div class="post-form__error">
+                Esse campo é obrigatório e deve ter no máximo 30 caracteres
               </div>
-              <br />
-              <button class="w-100 btn btn-primary btn-lg btn-dark" type="submit">Salvar</button>
-            </form>
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <%- include('./partial/bootstrap-js'); %>
-    <script src="/assets/dist/js/form-validation.js"></script>
-</body>
-
+              <% } %>  
+            </div>
+            <div class="post-form__group">
+              <label for="" class="post-form__label">Resumo</label>
+              <input type="text" class="post-form__input" id="resumo" name="resumo" placeholder="Escreva o resumo da notícia" value="<%= post.summary %>">
+              <% if (valido === false) {%>
+              <div class="post-form__error">
+                Esse campo é obrigatório e deve ter no máximo 30 caracteres
+              </div>
+              <% } %>  
+            </div>
+            <div class="post-form__group">
+              <label for="" class="post-form__label">Notícia</label>
+              <textarea class="post-form__textarea" id="description" name="description" cols="30" rows="10" placeholder="Escreva a sua notícia..."><%= post.content %></textarea>
+              <% if (valido === false) {%>
+              <div class="post-form__error">
+                Esse campo é obrigatório e deve ter no máximo 30 caracteres
+              </div>
+              <% } %>  
+            </div>
+            <button class="post-form__button" type="submit">Salvar</button>
+          </form>
+       </div>
+    </main>
+   <%- include('./partial/footer'); %>
+  </body>
 </html>

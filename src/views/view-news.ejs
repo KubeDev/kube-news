@@ -1,64 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title>
-    <%= post.title %>
-  </title>
-
-  <%- include('./partial/bootstrap-css'); %>
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .container {
-        max-width: 960px;
-      }
-    </style>
-
-</head>
-
-<body class="bg-light">
-
-  <%- include('./partial/nav-bar'); %>
-
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubenews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+  </head>
+  <body>
+    <%- include('./partial/header'); %>
     <main>
-      <div class="py-3 text-center">
-        <h2>
-          <%= post.title %>
-        </h2>
+      <div class="breadcrumb__container">
+        <nav class="breadcrumb">
+          <ul>
+            <li><a href="">KubeNews</a></li>
+            <li><a href=""><%= post.summary %></a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="row g-5">
-        <div class="col-md-12 col-lg-12">
-          <div class="row g-3">
-            <p>
-            <p class="lead">
-              <%- post.content %>
-            </p>
-            </p>
-          </div>
+      <div class="post__container">
+        <span class="post__date"><%= post.publishDate %></span>
+        <h3 class="post__title"><%= post.title %></h3>
+        <div class="post__content">
+          <p><%- post.content %></p>          
         </div>
       </div>
     </main>
-  </div>
-
-  <%- include('./partial/bootstrap-js'); %>
-</body>
-
+    <%- include('./partial/footer'); %>
+  </body>
 </html>
