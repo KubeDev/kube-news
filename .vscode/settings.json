@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1%40service": "file:///home/estudo/Documentos/Jornada/kube-news/k8s/deployment.yaml"
+    }
+}
