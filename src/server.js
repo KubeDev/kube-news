@@ -7,15 +7,17 @@ const config = require('./system-life');
 const middlewares = require('./middleware')
 
 const metricsMiddleware = promBundle({
-    includeMethod: true, 
-    includePath: true, 
-    includeStatusCode: true, 
+    includeMethod: true,
+    includePath: true,
+    includeStatusCode: true,
     includeUp: true,
     promClient: {
         collectDefaultMetrics: {
         }
-      }
+    }
 });
+
+// Meu Comentario
 
 app.use(middlewares.countRequests)
 app.use(metricsMiddleware)
@@ -28,14 +30,14 @@ app.set('view engine', 'ejs');
 
 
 app.get('/post', (req, res) => {
-    res.render('edit-news', {post: {title: "", content: "", summary: ""}, valido: true});
+    res.render('edit-news', { post: { title: "", content: "", summary: "" }, valido: true });
 });
 
 app.post('/post', async (req, res) => {
 
     let valid = true;
 
-    if ((req.body.title.length !== 0 && req.body.title.length < 30) && 
+    if ((req.body.title.length !== 0 && req.body.title.length < 30) &&
         (req.body.resumo.length !== 0 && req.body.resumo.length < 50) &&
         (req.body.description.length !== 0 && req.body.description.length < 2000)) {
         valid = true;
@@ -44,20 +46,20 @@ app.post('/post', async (req, res) => {
     }
 
     if (valid) {
-        await models.Post.create({title: req.body.title, content: req.body.description, summary: req.body.resumo, publishDate: Date.now()});
+        await models.Post.create({ title: req.body.title, content: req.body.description, summary: req.body.resumo, publishDate: Date.now() });
         res.redirect('/');
     } else {
-        res.render('edit-news', {post: {title: req.body.title, content: req.body.description, summary: req.body.resumo}, valido: false});
+        res.render('edit-news', { post: { title: req.body.title, content: req.body.description, summary: req.body.resumo }, valido: false });
     }
-    
+
 });
 
 app.post('/api/post', async (req, res) => {
 
     console.log(req.body.artigos)
-    for(const item of req.body.artigos) {
+    for (const item of req.body.artigos) {
 
-        await models.Post.create({title: item.title, content: item.description, summary: item.resumo, publishDate: Date.now()});
+        await models.Post.create({ title: item.title, content: item.description, summary: item.resumo, publishDate: Date.now() });
     }
 
     // models.Post.create({title: req.body.title, content: req.body.description, summary: req.body.resumo, publishDate: Date.now()});
@@ -67,14 +69,14 @@ app.post('/api/post', async (req, res) => {
 app.get('/post/:id', async (req, res) => {
 
     const post = await models.Post.findByPk(req.params.id);
-    res.render('view-news',{post: post});
+    res.render('view-news', { post: post });
 });
 
 
 app.get('/', async (req, res) => {
 
     const posts = await models.Post.findAll();
-    res.render('index',{posts: posts});
+    res.render('index', { posts: posts });
 });
 
 models.initDatabase();
