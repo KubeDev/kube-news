@@ -1,4 +1,4 @@
-name: Deploy to Minikube
+name: Build and Push to Docker Hub
 
 on:
   push:
@@ -6,33 +6,21 @@ on:
       - main
 
 jobs:
-  deploy:
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Minikube
-      run: |
-        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-        sudo install minikube-linux-amd64 /usr/local/bin/minikube
-        minikube start --driver=docker
-        minikube kubectl -- get po -A
+    - name: Set up Docker
+      uses: docker/setup-docker@v2
 
-    - name: Deploy to Minikube
-      run: kubectl apply -f k8s/
+    - name: Build Docker Image
+      run: docker build -t raco21/kube-news:latest .
 
-    - name: Check Deployment Status
-      run: kubectl rollout status deployment kubenews
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-    - name: Start Port Forwarding
-      run: |
-        kubectl port-forward service/kubenews 8080:80 &
-        disown
-
-    - name: Sleep for a While
-      run: sleep 10s  # Apenas um exemplo; ajuste conforme necessário
-
-    - name: Access the Service
-      run: curl http://localhost:8080
+    - name: Push to Docker Hub
+      run: docker push your-docker-username/your-image-name:latest
