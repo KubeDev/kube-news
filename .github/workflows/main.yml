@@ -24,7 +24,7 @@ jobs:
         password: Sarah2023@
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v3.0.0
+      uses: docker/build-push-action@v5.0.0
       with:
         context: ./src
         file: ./src/Dockerfile
