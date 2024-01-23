@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_and_push:
+  CI:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,4 +28,4 @@ jobs:
       with:
         context: ./src
         file: ./src/Dockerfile
-        push: true  # Adicionado para indicar que queremos realizar o push da imagem
+        push: true
