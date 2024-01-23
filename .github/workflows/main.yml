@@ -29,5 +29,3 @@ jobs:
         context: ./src
         file: ./src/Dockerfile
         push: true  # Adicionado para indicar que queremos realizar o push da imagem
-        tags: |
-          raco21/nome-da-imagem:late
