@@ -1,0 +1,27 @@
+name: Deploy to Minikube
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Minikube
+      run: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        minikube start --driver=docker
+        minikube kubectl -- get po -A
+
+    - name: Deploy to Minikube
+      run: kubectl apply -f k8s/
+
+    - name: Check Deployment Status
+      run: kubectl rollout status deployment kubenews
