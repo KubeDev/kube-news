@@ -26,5 +26,12 @@ jobs:
     - name: Check Deployment Status
       run: kubectl rollout status deployment kubenews
 
-    - name: Port Forwarding
-      run: kubectl port-forward service/kubenews 8080:80
+    - name: Start Port Forwarding
+      run: kubectl port-forward service/kubenews 8080:80 &
+      background: true
+
+    - name: Sleep for a While
+      run: sleep 10s  # Apenas um exemplo; ajuste conforme necessário
+
+    - name: Access the Service
+      run: curl http://localhost:8080
