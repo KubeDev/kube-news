@@ -18,8 +18,8 @@ jobs:
     - name: Set up Docker
       uses: docker/login-action@v3.0.0
       with:
-        username: viaraco21@gmail.com
-        password: Sarah2023@
+        username: ${{ secrets.RACO_SECRET1 }}
+        password: ${{ secrets.RACO_SECRET1 }}
 
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v5.0.0
