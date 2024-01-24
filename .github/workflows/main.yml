@@ -1,4 +1,4 @@
-name: Build and Push to Docker Hub
+name: Deploy to Minikube
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  CI:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,13 +21,17 @@ jobs:
       uses: docker/login-action@v3.0.0
       with:
         username: viaraco21@gmail.com
-        password: Sarah2023@
+        password: Sarah2024@
 
-    - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5.0.0
-      with:
-        context: ./src
-        file: ./src/Dockerfile
-        push: true  # Adicionado para indicar que queremos realizar o push da imagem
-        tags: |
-          raco21/kube-news:latest
+    - name: Pull Docker Image
+      run: docker pull raco21/kube-news:latest
+
+    - name: Set up Minikube
+      run: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        minikube start --driver=docker
+        minikube kubectl -- get po -A
+
+    - name: Apply Deployment
+      run: kubectl apply -f ./k8s/deployment.yaml

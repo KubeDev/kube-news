@@ -37,7 +37,7 @@ kind: Deployment
 metadata:
   name:  kubenews
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: kubenews
@@ -47,7 +47,7 @@ spec:
         app: kubenews
     spec:
       containers:
-      - image: raco21/kube-news:v2
+      - image: kube-news:latest
         name:  kubenews
         ports:
         - containerPort: 8080
