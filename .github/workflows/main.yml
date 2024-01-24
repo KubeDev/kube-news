@@ -1,12 +1,37 @@
-name: Deploy to Minikube
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  CI:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker
+      uses: docker/login-action@v3.0.0
+      with:
+        username: viaraco21@gmail.com
+        password: Sarah2023@
+
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v5.0.0
+      with:
+        context: ./src
+        file: ./src/Dockerfile
+        push: true  # Adicionado para indicar que queremos realizar o push da imagem
+        tags: |
+          raco21/kube-news:latest    
+
+
+  CD:
     runs-on: ubuntu-latest
     permissions:
       contents: read
