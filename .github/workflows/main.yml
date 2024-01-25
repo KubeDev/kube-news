@@ -26,10 +26,9 @@ jobs:
       with:
         context: ./src
         file: ./src/Dockerfile
-        push: true  # Adicionado para indicar que queremos realizar o push da imagem
+        push: true
         tags: |
-          raco21/kube-news:latest    
-
+          raco21/kube-news:latest
 
   CD:
     runs-on: ubuntu-latest
@@ -37,6 +36,8 @@ jobs:
       contents: read
       packages: write
       security-events: write
+
+    needs: CI  # Indica que este job depende do job CI
 
     steps:
     - name: Checkout Repository
@@ -60,3 +61,6 @@ jobs:
 
     - name: Apply Deployment
       run: kubectl apply -f ./k8s/deployment.yaml
+
+    - name: Wait for Pods to be Ready
+      run: kubectl wait --for=condition=ready pod --all --timeout=5m
