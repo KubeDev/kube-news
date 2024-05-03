@@ -64,3 +64,4 @@ jobs:
 
     - name: Wait for Pods to be Ready
       run: kubectl wait --for=condition=ready pod --all --timeout=5m
+      
