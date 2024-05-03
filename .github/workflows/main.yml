@@ -30,7 +30,7 @@ jobs:
         tags: |
           raco21/kube-news:latest
 
-  CD:
+  Approval:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -38,6 +38,26 @@ jobs:
       security-events: write
 
     needs: CI  # Indica que este job depende do job CI
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Request approval
+      uses: github/request-action@v2
+      with:
+        reviewers: username1, username2
+        wait-for-approval: true
+
+  CD:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+
+    needs: 
+      - Approval  # Indica que este job depende do job Approval
 
     steps:
     - name: Checkout Repository
