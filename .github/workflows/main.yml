@@ -64,4 +64,15 @@ jobs:
 
     - name: Wait for Pods to be Ready
       run: kubectl wait --for=condition=ready pod --all --timeout=5m
-      
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: v1.0.0  # Defina a tag da release
+        release_name: Release 1.0.0  # Nome da release
+        body: |  # Corpo da release
+          Descrição da release aqui.
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}  # Token de acesso do GitHub
