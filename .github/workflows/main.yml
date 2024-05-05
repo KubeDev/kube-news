@@ -29,7 +29,7 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            raco21/kube-news:latest 
+            raco21/kube-news:${{github.run.number}}
           
       ## Notificar falhas no job de aprovação por e-mail
       - name: Notify on Approval Failure
@@ -49,52 +49,16 @@ jobs:
     needs:
       - CI
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-    
-      - name: Set up Docker
-        uses: docker/login-action@v3.0.0
+      - uses: actions/checkout@v3.1.0 ## 
+      - name: Definindo o contexto
+        uses: Azure/k8s-set-context@v3.0
         with:
-          username: ${{ secrets.SECRET_RACO1 }}
-          password: ${{ secrets.SECRET_RACO }}
-    
-      - name: Pull Docker Image
-        run: docker pull raco21/kube-news:latest
-    
-      - name: Set up Minikube
-        run: |
-          curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-          sudo install minikube-linux-amd64 /usr/local/bin/minikube
-          minikube start --driver=docker
-          minikube kubectl -- get po -A
-    
-      - name: Apply Deployment
-        run: kubectl apply -f ./k8s/deployment.yaml
-    
-      - name: Wait for Pods to be Ready
-        run: kubectl wait --for=condition=ready pod --all --timeout=5m
-    
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
+          method: kubeconfig
+          kubeconfig: ${{secrets.K8S_CONFIG}}
+
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v4.9     
         with:
-          tag_name: v1.0.0  # Defina a tag da release
-          release_name: Release 1.0.0  # Nome da release
-          body: |  # Corpo da release
-            Descrição da release aqui.
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}  # Token de acesso do GitHub
-    
-      - name: Notify on CI Approval
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
-          subject: "CI Job Approved - ${{ github.repository }}"
-          body: "O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
-          to: ${{ secrets.DEVELOPER_EMAIL }}
+          images: raco21/kube-news:${{github.run.number}}
+          manifests: |
+            k8s/deployment.yaml
