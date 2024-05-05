@@ -25,18 +25,18 @@ jobs:
         tags: |
           raco21/kube-news:latest
 
-    - name: Notify on CI Approval
-      if: success()
+    - name: Notify on Approval Failure
+      if: ${{ failure() }}
       uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
         server_port: 465
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
-        from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
-        subject: "CI Job Approved - ${{ github.repository }}"
-        body: "O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
+        subject: "Approval Job Failed - ${{ github.repository }}"
+        body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
         to: ${{ secrets.DEVELOPER_EMAIL }}
+
     
 
 
