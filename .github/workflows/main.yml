@@ -44,25 +44,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Request approval
-      uses: actions/request-action@v2
-
-      with:
-        reviewers: username1,
-        wait-for-approval: true
-
-    - name: Notify on Approval Failure
-      if: ${{ failure() }}
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "Approval Job Failed - ${{ github.repository }}"
-        body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
-        to: ${{ secrets.DEVELOPER_EMAIL }}
-
   CD:
     runs-on: ubuntu-latest
     needs: 
