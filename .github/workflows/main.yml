@@ -45,7 +45,8 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Request approval
-      uses: github/request-action@v2
+      uses: actions/request-action@v2
+
       with:
         reviewers: username1, username2
         wait-for-approval: true
