@@ -1,21 +1,28 @@
+## Tarefa: Crie um pipeline de CI/CD usando o GitHub Actions para um projeto simples de aplicação web. 
+
+## 1. O pipeline deve ser ativado sempre que um novo commit for feito na branch main. 
 on:
   push:
     branches:
       - main
-
+      
+## 2. Instalar as dependências do projeto, Executar testes unitários, Construir a aplicação. 
+## Primeira parte - Execução do CI
 jobs:
-  CI:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Repository
+  CI: 
+    runs-on: ubuntu-latest ## imagem para teste
+    steps: ## validação repositorio
+    - name: Checkout Repository 
       uses: actions/checkout@v3
 
+    ## validação do repositorio do docker hub  
     - name: Set up Docker
       uses: docker/login-action@v3.0.0
       with:
         username: ${{ secrets.SECRET_RACO1 }}
         password: ${{ secrets.SECRET_RACO }}
-
+        
+    ## construção da imagem
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v5.0.0
       with:
@@ -23,8 +30,9 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-          raco21/kube-news:latest
-
+          raco21/kube-news:latest 
+          
+    ## Step para enviar notificação por e-mail quando houver falhas
     - name: Notify on Approval Failure
       if: ${{ failure() }}
       uses: dawidd6/action-send-mail@v3
@@ -36,6 +44,63 @@ jobs:
         subject: "Approval Job Failed - ${{ github.repository }}"
         body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
         to: ${{ secrets.DEVELOPER_EMAIL }}
+
+## Segunda Parte - Deploy da aplicação
+ CD:
+    runs-on: ubuntu-latest
+    needs: 
+      - Approval
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker
+      uses: docker/login-action@v3.0.0
+      with:
+        username: ${{ secrets.SECRET_RACO1 }}
+        password: ${{ secrets.SECRET_RACO }}
+
+    - name: Pull Docker Image
+      run: docker pull raco21/kube-news:latest
+
+    - name: Set up Minikube
+      run: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        minikube start --driver=docker
+        minikube kubectl -- get po -A
+
+    - name: Apply Deployment
+      run: kubectl apply -f ./k8s/deployment.yaml
+
+    - name: Wait for Pods to be Ready
+      run: kubectl wait --for=condition=ready pod --all --timeout=5m
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: v1.0.0  # Defina a tag da release
+        release_name: Release 1.0.0  # Nome da release
+        body: |  # Corpo da release
+          Descrição da release aqui.
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}  # Token de acesso do GitHub
+
+ - name: Notify on CI Approval
+  if: success()
+  uses: dawidd6/action-send-mail@v3
+  with:
+    server_address: smtp.gmail.com
+    server_port: 465
+    username: ${{ secrets.EMAIL_USERNAME }}
+    password: ${{ secrets.EMAIL_PASSWORD }}
+    from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
+    subject: "CI Job Approved - ${{ github.repository }}"
+    body: "O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
+    to: ${{ secrets.DEVELOPER_EMAIL }}
+        
 
     
 
