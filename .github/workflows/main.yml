@@ -51,10 +51,10 @@ jobs:
       - CI
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3
   
       - name: Set Kubernetes Context
-        uses: Azure/k8s-set-context@v1
+        uses: Azure/k8s-set-context@v3.0
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8S_CONFIG }}
