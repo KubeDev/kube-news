@@ -115,3 +115,4 @@ jobs:
         subject: "CD Job Failed - ${{ github.repository }}"
         body: "O job de implantação (CD) falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
         to: ${{ secrets.DEVELOPER_EMAIL }}
+        
