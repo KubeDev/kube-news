@@ -29,7 +29,7 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            raco21/kube-news:${{ github.run.id }}
+            raco21/kube-news:latest
           
       ## Notificar falhas no job de aprovação por e-mail
       - name: Notify on Approval Failure
@@ -60,6 +60,6 @@ jobs:
       - name: Deploy to Kubernetes cluster
         uses: Azure/k8s-deploy@v4.9     
         with:
-          images: raco21/kube-news:${{github.run.number}}
+          images: raco21/kube-news:latest
           manifests: |
             k8s/deployment.yaml
