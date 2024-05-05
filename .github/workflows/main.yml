@@ -48,15 +48,15 @@ jobs:
       uses: actions/request-action@v2
 
       with:
-        reviewers: username1, username2
+        reviewers: username1,
         wait-for-approval: true
 
     - name: Notify on Approval Failure
       if: ${{ failure() }}
       uses: dawidd6/action-send-mail@v3
       with:
-        server_address: ${{ secrets.SMTP_SERVER }}
-        server_port: ${{ secrets.SMTP_PORT }}
+        server_address: smtp.gmail.com
+        server_port: 465
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: "Approval Job Failed - ${{ github.repository }}"
