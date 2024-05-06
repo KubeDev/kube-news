@@ -96,4 +96,5 @@ jobs:
           subject: "CI Job Approved - ${{ github.repository }}"
           body: "O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
           to: ${{ secrets.DEVELOPER_EMAIL }}
+          
       
