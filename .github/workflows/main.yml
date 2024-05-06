@@ -31,7 +31,7 @@ jobs:
           tags: |
             raco21/kube-news:latest
           
-      ## Notificar falhas no job de aprovação por e-mail
+      ## Notificar falhas no job por e-mail
       - name: Notify Failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
@@ -56,7 +56,7 @@ jobs:
 
         ## 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da aplicaçao.
   
-      - name: Set Kubernetes Context ## Apesar de ser da Azure o Context pode ser usado em qualquer cluster que tenho o kube config.
+      - name: Set Kubernetes Context ## Apesar de ser da Azure o Context pode ser usado em qualquer cluster que tenha o kube config.
         uses: Azure/k8s-set-context@v3.0
         with:
           method: kubeconfig
@@ -70,17 +70,18 @@ jobs:
             k8s/deployment.yaml
 
 ## Processo de criação de Release
-      - name: Create GitHub Release
-        id: create_release
+      - name: Create Release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.0.0  # Defina a tag da release
-          release_name: Release 1.0.0  # Nome da release
-          body: |  # Corpo da release
-            Descrição da release aqui.
+          token: ${{ secrets.GITHUB_TOKEN }} # Substitua pelo nome da sua variável de ambiente/secreto contendo o token de acesso
+          tag_name: v1.0.0
+          release_name: Release v1.0.0
+          body: 'Descrição da release'
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}  # Token de acesso do GitHub
+          owner: viaraco21
+          repo: kube-news
+
 
     ## 4. Notificar o desenvolvedor via e-mail se o processo de CI/CD falhar em qualquer etapa.
       - name: Notify on CI Approval
