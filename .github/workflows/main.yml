@@ -69,20 +69,6 @@ jobs:
           manifests: |
             k8s/deployment.yaml
 
-## Processo de criação de Release - Armazenar o artefato como release do github
-      - name: Create Release
-        uses: actions/create-release@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN1 }} # Substitua pelo nome da sua variável de ambiente/secreto contendo o token de acesso
-          tag_name: v1.0.0
-          release_name: Release v1.0.0
-          body: 'Descrição da release'
-          draft: false
-          prerelease: false
-          owner: viaraco21
-          repo: kube-news
-
-
     ## 4. Notificar o desenvolvedor via e-mail qunando o processo finalizar
       - name: Notify on CI Approval
         if: success()
