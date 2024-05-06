@@ -73,7 +73,7 @@ jobs:
       - name: Create Release
         uses: actions/create-release@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Substitua pelo nome da sua variável de ambiente/secreto contendo o token de acesso
+          token: ${{ secrets.GITHUB_TOKEN1 }} # Substitua pelo nome da sua variável de ambiente/secreto contendo o token de acesso
           tag_name: v1.0.0
           release_name: Release v1.0.0
           body: 'Descrição da release'
