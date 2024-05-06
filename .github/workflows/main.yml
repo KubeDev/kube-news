@@ -56,37 +56,6 @@ jobs:
 
         ## 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da aplicaçao.
 
-      ## Aprovação do Projeto  
-
-      - name: Request approval
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const { data: { html_url: pullRequestUrl } } = await github.pulls.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Deploy approval',
-              head: context.sha,
-              base: 'main'
-            });
-
-            core.setOutput('pull-request-url', pullRequestUrl);
-
-      - name: Wait for approval
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const { data: reviews } = await github.pulls.listReviews({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-
-            const approved = reviews.some(review => review.state === 'APPROVED');
-
-            if (!approved) {
-              throw new Error('Deploy approval not granted');
-            } 
       - name: Set Kubernetes Context ## Apesar de ser da Azure o Context pode ser usado em qualquer cluster que tenha o kube config.
         uses: Azure/k8s-set-context@v3.0
         with:
