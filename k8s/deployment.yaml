@@ -47,7 +47,7 @@ spec:
         app: kubenews
     spec:
       containers:
-      - image: raco21/kube-news:v2
+      - image: raco21/kube-news:projeto-santander
         name:  kubenews
         ports:
         - containerPort: 8080
@@ -71,4 +71,4 @@ spec:
   ports:
   - port: 80
     targetPort: 8080       
-  type: NodePort
+  type: LoadBalancer
