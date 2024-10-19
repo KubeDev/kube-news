@@ -17,10 +17,10 @@ const seque = new sequelize.Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
     port: DB_PORT,
     dialect: 'postgres',
     dialectOptions: {
-      ssl: {
-        require: DB_SSL_REQUIRE, 
-        rejectUnauthorized: false 
-      }
+      ssl: DB_SSL_REQUIRE ? {
+        require: true,
+        rejectUnauthorized: false
+      } : false
     }
   });
 
