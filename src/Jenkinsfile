@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build Bocker Image') {
+            steps {
+                script {
+                    dockerapp = docker.build("vinifurt22/kube-news:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
+                }
+            }
+        }
+    }
+}
