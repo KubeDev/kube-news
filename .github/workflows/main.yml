@@ -29,10 +29,10 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            raco21/kube-news:latest 
+            raco21/kube-news:latest
           
-      ## Notificar falhas no job de aprovação por e-mail
-      - name: Notify on Approval Failure
+      ## Notificar falhas no job por e-mail
+      - name: Notify Failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
         with:
@@ -40,52 +40,36 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
+          from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
           subject: "Approval Job Failed - ${{ github.repository }}"
           body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
           to: ${{ secrets.DEVELOPER_EMAIL }}
 
-  CD:
+## Processo de entrega 
+  CD: 
     runs-on: ubuntu-latest
     needs:
       - CI
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-    
-      - name: Set up Docker
-        uses: docker/login-action@v3.0.0
+
+        ## 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da aplicaçao.
+
+      - name: Set Kubernetes Context ## Apesar de ser da Azure o Context pode ser usado em qualquer cluster que tenha o kube config.
+        uses: Azure/k8s-set-context@v3.0
         with:
-          username: ${{ secrets.SECRET_RACO1 }}
-          password: ${{ secrets.SECRET_RACO }}
-    
-      - name: Pull Docker Image
-        run: docker pull raco21/kube-news:latest
-    
-      - name: Set up Minikube
-        run: |
-          curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-          sudo install minikube-linux-amd64 /usr/local/bin/minikube
-          minikube start --driver=docker
-          minikube kubectl -- get po -A
-    
-      - name: Apply Deployment
-        run: kubectl apply -f ./k8s/deployment.yaml
-    
-      - name: Wait for Pods to be Ready
-        run: kubectl wait --for=condition=ready pod --all --timeout=5m
-    
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_CONFIG }}
+     
+      - name: Deploy to Kubernetes cluster ## Neste caso também podemos utilizar o actions da Azure.
+        uses: Azure/k8s-deploy@v4.9     
         with:
-          tag_name: v1.0.0  # Defina a tag da release
-          release_name: Release 1.0.0  # Nome da release
-          body: |  # Corpo da release
-            Descrição da release aqui.
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}  # Token de acesso do GitHub
-    
+          images: raco21/kube-news:latest
+          manifests: |
+            k8s/deployment.yaml
+
+    ## 4. Notificar o desenvolvedor via e-mail qunando o processo finalizar
       - name: Notify on CI Approval
         if: success()
         uses: dawidd6/action-send-mail@v3
