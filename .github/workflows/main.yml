@@ -91,26 +91,3 @@ jobs:
             O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes.
             A aplicação está disponível em http://${APP_IP}
           to: ${{ secrets.DEVELOPER_EMAIL }}
-# Adicionar o artefato como uma release no GitHub
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-        tag_name: v1.0.0 # Substitua por sua versão
-        release_name: Release v1.0.0
-        body: |
-          Esta é a versão 1.0.0 da aplicação.
-          - Lista de mudanças relevantes no release.
-        draft: false
-        prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./path/to/your/built/artifact.zip
-        asset_name: artifact.zip
-        asset_content_type: application/zip          
