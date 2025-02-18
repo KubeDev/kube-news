@@ -72,7 +72,7 @@ jobs:
       # Passo para obter o IP público da aplicação
       - name: Get Application URL
         run: |
-          # Substituir <service-name> pelo nome real do seu serviço do Kubernetes
+          # Substitua <service-name> pelo nome real do seu serviço do Kubernetes
           APP_IP=$(kubectl get svc kubenews -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
           echo "Application is available at http://${APP_IP}"
         
@@ -88,6 +88,6 @@ jobs:
           from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
           subject: "CI Job Approved - ${{ github.repository }}"
           body: |
-            O Deploy foi realizado com sucesso! ${{ github.repository }}. Confira o workflow para mais detalhes.
+            O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes.
             A aplicação está disponível em http://${APP_IP}
           to: ${{ secrets.DEVELOPER_EMAIL }}
