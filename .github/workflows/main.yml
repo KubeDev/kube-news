@@ -81,7 +81,4 @@ jobs:
           from: ${{ secrets.EMAIL_USERNAME }}  # Endereço de e-mail do remetente
           subject: "CI Job Approved - ${{ github.repository }}"
           body: "O job CI foi aprovado para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
-          to: ${{ secrets.DEVELOPER_EMAIL }}
-          
-          
-      
+          to: ${{ secrets.DEVELOPER_EMAIL }}                 
