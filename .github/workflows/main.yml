@@ -34,10 +34,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v4.4.2   # Substitua por sua versão dinâmica
-          release_name: Release v4.4.2
+          tag_name: v4.4.3   # Substitua por sua versão dinâmica
+          release_name: Release v4.4.3
           body: |
-            Esta é a versão 4.4.2 da aplicação.
+            Esta é a versão 4.4.3 da aplicação.
             - Lista de mudanças relevantes no release.
           draft: false
           prerelease: false
