@@ -47,10 +47,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v3.3.3   # Substitua por sua versão dinâmica
-          release_name: Release v3.3.3
+          tag_name: v3.3.1   # Substitua por sua versão dinâmica
+          release_name: Release v3.3.1
           body: |
-            Esta é a versão 3.3.3 da aplicação.
+            Esta é a versão 3.3.1 da aplicação.
             - Lista de mudanças relevantes no release.
           draft: false
           prerelease: false
