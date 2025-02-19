@@ -6,11 +6,48 @@ on:
       - main
 
 jobs:
-  CI:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Validate Required File
+        uses: ./validate-file-action
+        with:
+          required_file_name: 'path/to/required-file.txt'
+
+  CI:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          
+      - name: Install Sonar Scanner
+        run: |
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+          export PATH=$PATH:$PWD/sonar-scanner-4.6.2.2472-linux/bin
+
+      - name: Run SonarQube Analysis
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=my_project_key \
+            -Dsonar.sources=./src \
+            -Dsonar.host.url=$SONAR_HOST_URL \
+            -Dsonar.login=$SONAR_TOKEN
+
+
+        # configurado para acessar o Docker Hub
 
       - name: Set up Docker
         uses: docker/login-action@v3.0.0
@@ -27,6 +64,8 @@ jobs:
           tags: |
             raco21/kube-news:latest
 
+# 2. O pipeline deve executar os seguintes passos: 
+  # Criacao do Release
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
@@ -41,6 +80,7 @@ jobs:
           draft: false
           prerelease: false
 
+    # Notifica o DevOps em caso de falha  
       - name: Notify Failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
@@ -54,6 +94,8 @@ jobs:
           body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
           to: ${{ secrets.DEVELOPER_EMAIL }}    
 
+# 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da aplicação em um ambiente de teste. ✔
+  
   CD:
     runs-on: ubuntu-latest
     needs:
@@ -77,10 +119,13 @@ jobs:
           manifests: |
             k8s/deployment.yaml
 
+    # Informa o endereco para acessar a aplicacao
       - name: Get Application URL
         run: |
           APP_IP=$(kubectl get svc kubenews -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
           echo "Application is available at http://${APP_IP}"
+
+    # Notifica o DevOps sobre o final do Deploy
 
       - name: Notify on CI Approval
         if: success()

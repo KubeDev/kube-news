@@ -3,7 +3,7 @@ Projeto Santander
 Tarefa: Crie um pipeline de CI/CD usando o GitHub Actions para um projeto simples de 
 aplicação web.
 
-Neste projeto eu utilizei o cluster kubernetes da cloud.digitalocean e configurei o secrets K8S_CONFIG para receber o seu arquivo config.
+Neste projeto eu utilizei o cluster kubernetes da cloud.digitalocean e configurei o secrets K8S_CONFIG para receber o seu arquivo kube config.
 
 *****************************************************************************************************************************************************
 
@@ -18,7 +18,7 @@ o Executar testes unitários. ✔
 o Construir a aplicação. ✔
 o Armazenar o artefato como release do github ✔
 o Usar funcionalidade environment do github para restringir a aprovação do 
-deploy para um usuário ou grupo do github
+deploy para um usuário ou grupo do github ✔
 
 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da 
 aplicação em um ambiente de teste. ✔
@@ -33,15 +33,18 @@ o Critérios:
 CI e de CD
 § Caso haja alguma interação manual isso deve estar declarado no 
 Desenho
+
 • Criar uma action do tipo TypeScript que faça execução de algum linter ou quality 
 gates
 o Exemplos:
 § Validar se existe um arquivo no repositório necessário para o build,
 caso negativo abortar a esteira indicando que e necessário esse 
 arquivo
+
 § Executar uma análise estática usando a ferramenta SonarQube ou 
 alguma outra similiar
 § Etc...
+
 Critérios de Avaliação:
 1. Correção: O pipeline deve funcionar conforme especificado nos requisitos.
 2. Compreensão: O candidato deve ser capaz de explicar como o pipeline funciona e por 
