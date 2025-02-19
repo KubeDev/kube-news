@@ -27,7 +27,6 @@ jobs:
           tags: |
             raco21/kube-news:latest
 
-      # Adicionar etapa para criar uma release no GitHub
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
@@ -41,7 +40,7 @@ jobs:
             - Lista de mudanças relevantes no release.
           draft: false
           prerelease: false
-    
+
       - name: Notify Failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
@@ -59,6 +58,8 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - CI
+    environment: 
+      name: production # Substitua pelo nome do seu ambiente real
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
