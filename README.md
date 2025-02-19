@@ -16,7 +16,7 @@ Requisitos:
 o Instalar as dependências do projeto. ✔
 o Executar testes unitários. ✔
 o Construir a aplicação. ✔
-o Armazenar o artefato como release do github
+o Armazenar o artefato como release do github ✔
 o Usar funcionalidade environment do github para restringir a aprovação do 
 deploy para um usuário ou grupo do github
 
