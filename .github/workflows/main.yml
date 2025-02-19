@@ -34,10 +34,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v4.4.1   # Substitua por sua versão dinâmica
-          release_name: Release v4.4.1
+          tag_name: v4.4.2   # Substitua por sua versão dinâmica
+          release_name: Release v4.4.2
           body: |
-            Esta é a versão 4.4.1 da aplicação.
+            Esta é a versão 4.4.2 da aplicação.
             - Lista de mudanças relevantes no release.
           draft: false
           prerelease: false
@@ -78,7 +78,7 @@ jobs:
 
       - name: Get Application URL
         run: |
-          APP_IP=$(kubectl get svc default -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+          APP_IP=$(kubectl get svc kube-node-lease -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
           echo "Application is available at http://${APP_IP}"
 
       - name: Notify on CI Approval
