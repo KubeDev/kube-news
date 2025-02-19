@@ -10,20 +10,20 @@ Neste projeto eu utilizei o cluster kubernetes da cloud.digitalocean e configure
 Tarefa: Crie um pipeline de CI/CD usando o GitHub Actions para um projeto simples de 
 aplicação web.
 Requisitos:
-1. O pipeline deve ser ativado sempre que um novo commit for feito na branch main.
+1. O pipeline deve ser ativado sempre que um novo commit for feito na branch main. ✔
 
-2. O pipeline deve executar os seguintes passos:
-o Instalar as dependências do projeto.
-o Executar testes unitários.
-o Construir a aplicação.
+2. O pipeline deve executar os seguintes passos: 
+o Instalar as dependências do projeto. ✔
+o Executar testes unitários. ✔
+o Construir a aplicação. ✔
 o Armazenar o artefato como release do github
 o Usar funcionalidade environment do github para restringir a aprovação do 
 deploy para um usuário ou grupo do github
 
 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da 
-aplicação em um ambiente de teste.
+aplicação em um ambiente de teste. ✔
 
-4. O pipeline deve notificar o desenvolvedor via e-mail se o processo de CI/CD falhar em qualquer etapa e no final quando finalizar.
+4. O pipeline deve notificar o desenvolvedor via e-mail se o processo de CI/CD falhar em qualquer etapa e no final quando finalizar. ✔
 
 Plus(Não obrigatório porem será um diferencial):
 • Criar um desenho simples de arquitetura na ferramenta draw.io (diagrams.net) que 
