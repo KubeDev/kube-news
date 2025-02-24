@@ -25,7 +25,7 @@ aplicação em um ambiente de teste. ✔
 
 4. O pipeline deve notificar o desenvolvedor via e-mail se o processo de CI/CD falhar em qualquer etapa e no final quando finalizar. ✔
 
-Plus(Não obrigatório porem será um diferencial):
+Plus(Não obrigatório porem será um diferencial): ✔
 • Criar um desenho simples de arquitetura na ferramenta draw.io (diagrams.net) que 
 mostre como sera estruturado o pipeline.
 o Critérios:
@@ -33,6 +33,8 @@ o Critérios:
 CI e de CD
 § Caso haja alguma interação manual isso deve estar declarado no 
 Desenho
+
+https://drive.google.com/file/d/1QEG4VXxvf_BTn3m2n3Eupf1EOoleVIxf/view?usp=drive_link
 
 • Criar uma action do tipo TypeScript que faça execução de algum linter ou quality 
 gates
