@@ -1,0 +1,9 @@
+name: "Validate Required File"
+description: "Validates if a required file exists in the repository."
+inputs:
+  required_file_name:
+    description: "Name of the file that must be present."
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"

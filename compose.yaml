@@ -1,0 +1,27 @@
+services:
+  postgre:
+    image: postgres:13.13
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: pg1234
+      POSTGRES_USER: kubenews
+      POSTGRES_DB: kubenews
+kubenews:
+    image: raco21/kube-news:v1
+    depends_on:
+      - postgre
+    build:
+      context: ./src 
+      dockerfile: ../../Dockerfile  # Corrigi o caminho do Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      DB_DATABASE: kubenews
+      DB_USERNAME: kubenews
+      DB_PASSWORD: pg1234 
+      DB_HOST: postgre  # Corrigi o nome do serviço
+
+networks:
+  kubenews_net:
+    driver: bridge

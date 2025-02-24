@@ -1,0 +1,116 @@
+## 1. O pipeline deve ser ativado sempre que um novo commit for feito na branch main. ✔
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Verificar se um arquivo específico existe
+      - name: Check Required File
+        uses: ./my-action
+        with:
+          file-path: 'path/to/required/file.ext'   
+        
+
+      # configuracao para acessar o Docker Hub
+
+      - name: Set up Docker
+        uses: docker/login-action@v3.0.0
+        with:
+          username: ${{ secrets.SECRET_RACO1 }}
+          password: ${{ secrets.SECRET_RACO }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5.0.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: |
+            raco21/kube-news:latest
+
+# 2. O pipeline deve executar os seguintes passos: 
+  # Criacao do Release
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v6.6.6   # Substituir por sua versão dinâmica
+          release_name: Release v6.6.6
+          body: |
+            Esta é a versão 6.6.6 da aplicação.
+            - Lista de mudanças relevantes no release.
+          draft: false
+          prerelease: false
+
+    # Notifica o DevOps em caso de falha  
+      - name: Notify Failure
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          from: ${{ secrets.EMAIL_USERNAME }}
+          subject: "Approval Job Failed - ${{ github.repository }}"
+          body: "O job de aprovação falhou para o repositório ${{ github.repository }}. Confira o workflow para mais detalhes."
+          to: ${{ secrets.DEVELOPER_EMAIL }}    
+
+# 3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da aplicação em um ambiente de teste. ✔
+  
+  CD:
+    runs-on: ubuntu-latest
+    needs:
+      - CI
+    environment: 
+      name: production # Substituir pelo nome do seu ambiente real
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Kubernetes Context
+        uses: Azure/k8s-set-context@v3
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_CONFIG }}
+
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v4.9     
+        with:
+          images: raco21/kube-news:latest
+          manifests: |
+            k8s/deployment.yaml
+
+    # Informa o endereco para acessar a aplicacao
+      - name: Get Application URL
+        run: |
+          APP_IP=$(kubectl get svc kubenews -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+          echo "Application is available at http://${APP_IP}"
+
+    # Notifica o DevOps sobre o final do Deploy
+
+      - name: Notify on CI Approval
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          from: ${{ secrets.EMAIL_USERNAME }}
+          subject: "CI Job Approved - ${{ github.repository }}"
+          body: |
+            O job CI foi aprovado para o repositório ${{ github.repository }}.
+            A aplicação está disponível
+          to: ${{ secrets.DEVELOPER_EMAIL }}

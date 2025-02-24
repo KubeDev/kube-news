@@ -1,15 +1,59 @@
-# Projeto kube-news
+Projeto Santander
 
-### Objetivo
-O projeto Kube-news é uma aplicação escrita em NodeJS e tem como objetivo ser uma aplicação de exemplo pra trabalhar com o uso de containers.
+Tarefa: Crie um pipeline de CI/CD usando o GitHub Actions para um projeto simples de 
+aplicação web.
 
-### Configuração
-Pra configurar a aplicação, é preciso ter um banco de dados Postgre e pra definir o acesso ao banco, configure as variáveis de ambiente abaixo:
+Neste projeto eu utilizei o cluster kubernetes da cloud.digitalocean e configurei o secrets K8S_CONFIG para receber o seu arquivo kube config.
 
-DB_DATABASE => Nome do banco de dados que vai ser usado.
+*****************************************************************************************************************************************************
 
-DB_USERNAME => Usuário do banco de dados.
+Tarefa: Crie um pipeline de CI/CD usando o GitHub Actions para um projeto simples de 
+aplicação web.
+Requisitos:
+1. O pipeline deve ser ativado sempre que um novo commit for feito na branch main. ✔
 
-DB_PASSWORD => Senha do usuário do banco de dados.
+2. O pipeline deve executar os seguintes passos: 
+o Instalar as dependências do projeto. ✔
+o Executar testes unitários. ✔
+o Construir a aplicação. ✔
+o Armazenar o artefato como release do github ✔
+o Usar funcionalidade environment do github para restringir a aprovação do 
+deploy para um usuário ou grupo do github ✔
 
-DB_HOST => Endereço do banco de dados.
+3. Se todos os passos acima forem bem-sucedidos, o pipeline deve fazer o deploy da 
+aplicação em um ambiente de teste. ✔
+
+4. O pipeline deve notificar o desenvolvedor via e-mail se o processo de CI/CD falhar em qualquer etapa e no final quando finalizar. ✔
+
+Plus(Não obrigatório porem será um diferencial): ✔
+• Criar um desenho simples de arquitetura na ferramenta draw.io (diagrams.net) que 
+mostre como sera estruturado o pipeline.
+o Critérios:
+§ No desenho deve estar descritos claramente a separação dos steps de 
+CI e de CD
+§ Caso haja alguma interação manual isso deve estar declarado no 
+Desenho
+
+https://drive.google.com/file/d/1QEG4VXxvf_BTn3m2n3Eupf1EOoleVIxf/view?usp=drive_link
+
+• Criar uma action do tipo TypeScript que faça execução de algum linter ou quality 
+gates
+o Exemplos:
+§ Validar se existe um arquivo no repositório necessário para o build,
+caso negativo abortar a esteira indicando que e necessário esse 
+arquivo
+
+§ Executar uma análise estática usando a ferramenta SonarQube ou 
+alguma outra similiar
+§ Etc...
+
+Critérios de Avaliação:
+1. Correção: O pipeline deve funcionar conforme especificado nos requisitos.
+2. Compreensão: O candidato deve ser capaz de explicar como o pipeline funciona e por 
+que ele configurou as coisas da maneira que fez. (Será avaliado na entrevista)
+3. Eficiência: O pipeline deve ser configurado de maneira eficiente, sem etapas 
+desnecessárias.
+4. Boas práticas: O pipeline deve seguir as boas práticas do GitHub Actions, como o uso 
+de segredos para armazenar informações sensíveis.
+5. O Repositório do github com a implementação do pipeline deve ser enviado aos 
+entrevistadores no prazo indicado.
