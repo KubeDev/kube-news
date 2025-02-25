@@ -1,9 +1,0 @@
-name: 'Check File Exists'
-description: 'Verifica se um arquivo necessário existe no repositório'
-inputs:
-  file-path:
-    description: 'Caminho para o arquivo a ser verificado'
-    required: true
-runs:
-  using: 'node12'
-  main: 'dist/index.js'

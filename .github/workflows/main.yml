@@ -11,14 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      # Verificar se um arquivo específico existe
-      - name: Check Required File
-        uses: ./my-action
-        with:
-          file-path: 'path/to/required/file.ext'   
-        
+        uses: actions/checkout@v3       
 
       # configuracao para acessar o Docker Hub
 
