@@ -33,6 +33,8 @@ app.get('/post', (req, res) => {
 
 app.post('/post', async (req, res) => {
 
+    const fixo = "Teste"
+
     let valid = true;
 
     if ((req.body.title.length !== 0 && req.body.title.length < 30) && 
@@ -42,6 +44,8 @@ app.post('/post', async (req, res) => {
     } else {
         valid = false;
     }
+
+    fixo = "Erro"
 
     if (valid) {
         await models.Post.create({title: req.body.title, content: req.body.description, summary: req.body.resumo, publishDate: Date.now()});
