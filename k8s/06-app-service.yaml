@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-news
+  namespace: kube-news
+  labels:
+    app.kubernetes.io/name: kube-news
+    app.kubernetes.io/part-of: kube-news
+spec:
+  # ClusterIP + Ingress é o padrão mais portável entre nuvens.
+  # Para expor diretamente via balanceador da nuvem, troque para LoadBalancer.
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: kube-news
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
