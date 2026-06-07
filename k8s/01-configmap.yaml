@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-news-config
+  namespace: kube-news
+  labels:
+    app.kubernetes.io/part-of: kube-news
+data:
+  # Aponta para o Service do PostgreSQL (DNS interno do cluster)
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  DB_DATABASE: "kubedevnews"
+  DB_SSL_REQUIRE: "false"

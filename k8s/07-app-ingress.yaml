@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kube-news
+  namespace: kube-news
+  labels:
+    app.kubernetes.io/name: kube-news
+    app.kubernetes.io/part-of: kube-news
+  annotations:
+    # Ajuste conforme o seu controller (nginx, traefik, alb, gce...).
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    # >>> Troque pelo domínio que você usará na nuvem <<<
+    - host: kube-news.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kube-news
+                port:
+                  number: 80
